@@ -3,9 +3,10 @@ export const es = {
 	// UI Messages
 	ui: {
 		helloWorld: 'Hola Mundo',
-		welcome: 'Bienvenido',
+		welcome: '¡Bienvenido a FK - El Juego Terminal Definitivo!',
 		exit: 'Presiona Ctrl+C para salir',
 		loading: 'Cargando...',
+		subtitle: 'Una aventura terminal con muchos datos',
 	},
 	
 	// Game Messages

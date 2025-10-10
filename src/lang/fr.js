@@ -3,9 +3,10 @@ export const fr = {
 	// UI Messages
 	ui: {
 		helloWorld: 'Bonjour le Monde',
-		welcome: 'Bienvenue',
+		welcome: 'Bienvenue dans FK - Le Jeu Terminal Ultime!',
 		exit: 'Appuyez sur Ctrl+C pour quitter',
 		loading: 'Chargement...',
+		subtitle: 'Une aventure terminale riche en données',
 	},
 	
 	// Game Messages
