@@ -2,11 +2,10 @@
 export const en = {
 	// UI Messages
 	ui: {
-		helloWorld: 'Hello World',
-		welcome: 'Welcome to FK - The Ultimate Terminal Game!',
+		welcome: 'Baseball Management Game',
 		exit: 'Press Ctrl+C to exit',
 		loading: 'Loading...',
-		subtitle: 'A data-heavy terminal-based adventure',
+		subtitle: 'Bring home the championship!',
 	},
 	
 	// Game Messages
