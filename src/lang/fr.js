@@ -6,6 +6,8 @@ export const fr = {
 		exit: 'Appuyez sur Ctrl+C pour quitter',
 		loading: 'Chargement...',
 		subtitle: 'Ramenez le championnat à la maison!',
+		menuInstructions: 'Utilisez les flèches ↑↓ pour naviguer, Entrée pour sélectionner',
+		pressAnyKey: 'Appuyez sur une touche pour continuer...',
 	},
 	
 	// Game Messages

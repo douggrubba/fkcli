@@ -6,6 +6,8 @@ export const en = {
 		exit: 'Press Ctrl+C to exit',
 		loading: 'Loading...',
 		subtitle: 'Bring home the championship!',
+		menuInstructions: 'Use ↑↓ arrows to navigate, Enter to select',
+		pressAnyKey: 'Press any key to continue...',
 	},
 	
 	// Game Messages
