@@ -27,7 +27,7 @@ class GameDatabase {
                 season INTEGER NOT NULL,
                 wins INTEGER DEFAULT 0,
                 losses INTEGER DEFAULT 0,
-                logo_base64 TEXT,
+                emoji TEXT,
                 created_at TEXT DEFAULT CURRENT_TIMESTAMP,
                 UNIQUE(id, season)
             );
@@ -54,28 +54,28 @@ class GameDatabase {
     // ===============================
     
     createTeam(teamData) {
-        const { id, name, city, league, division, season = new Date().getFullYear(), logoBase64 = null } = teamData;
+        const { id, name, city, league, division, season = new Date().getFullYear(), emoji = '⚾' } = teamData;
         
         const stmt = this.db.prepare(`
-            INSERT OR REPLACE INTO teams (id, name, city, league, division, season, wins, losses, logo_base64)
+            INSERT OR REPLACE INTO teams (id, name, city, league, division, season, wins, losses, emoji)
             VALUES (?, ?, ?, ?, ?, ?, 0, 0, ?)
         `);
         
-        return stmt.run(id, name, city, league, division, season, logoBase64);
+        return stmt.run(id, name, city, league, division, season, emoji);
     }
 
-    updateTeamLogo(teamId, logoBase64, season = new Date().getFullYear()) {
+    updateTeamEmoji(teamId, emoji, season = new Date().getFullYear()) {
         const stmt = this.db.prepare(`
             UPDATE teams 
-            SET logo_base64 = ? 
+            SET emoji = ? 
             WHERE id = ? AND season = ?
         `);
-        return stmt.run(logoBase64, teamId, season);
+        return stmt.run(emoji, teamId, season);
     }
 
     getTeamRecord(teamId, season = new Date().getFullYear()) {
         const stmt = this.db.prepare(`
-            SELECT id, name, city, league, division, wins, losses, logo_base64,
+            SELECT id, name, city, league, division, wins, losses, emoji,
                    CAST(wins AS FLOAT) / NULLIF(wins + losses, 0) as win_percentage
             FROM teams 
             WHERE id = ? AND season = ?
@@ -94,7 +94,7 @@ class GameDatabase {
 
     getStandings(league = null, division = null, season = new Date().getFullYear()) {
         let query = `
-            SELECT id, name, city, league, division, wins, losses, logo_base64,
+            SELECT id, name, city, league, division, wins, losses, emoji,
                    CAST(wins AS FLOAT) / NULLIF(wins + losses, 0) as win_percentage,
                    (wins + losses) as games_played
             FROM teams 

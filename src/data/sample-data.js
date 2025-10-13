@@ -12,7 +12,7 @@ export const sampleTeams = [
             league: "American",
             division: "East",
             season: 2025,
-            logoBase64: ASCII_TEAM_LOGO
+            emoji: "🧦"
         },
         // Profile data (JSON document)
         profile: {
@@ -69,7 +69,7 @@ export const sampleTeams = [
             league: "American",
             division: "East",
             season: 2025,
-            logoBase64: ASCII_TEAM_LOGO
+            emoji: "🎩"
         },
         profile: {
             fullName: "New York Yankees",
@@ -125,7 +125,7 @@ export const sampleTeams = [
             league: "National",
             division: "West",
             season: 2025,
-            logoBase64: ASCII_TEAM_LOGO
+            emoji: "💙"
         },
         profile: {
             fullName: "Los Angeles Dodgers",

@@ -66,15 +66,11 @@ const TeamSelectionScreen = ({ onTeamSelect, onBack }) => {
         const winPct = record.win_percentage ? (record.win_percentage * 100).toFixed(1) : '0.0';
         const gamesPlayed = (record.wins || 0) + (record.losses || 0);
 
-        const logoElement = teams[selectedIndex]?.logo_base64 
-            ? React.createElement(Text, {
-                key: 'logo',
-                color: 'yellow'
-            }, teams[selectedIndex].logo_base64)
-            : React.createElement(Text, {
-                key: 'logo-placeholder',
-                color: 'gray'
-            }, '🏟️ ⚾ 🦅');
+        const logoElement = React.createElement(Text, {
+            key: 'logo',
+            color: 'yellow',
+            bold: true
+        }, teams[selectedIndex]?.emoji || '⚾');
 
         return React.createElement(Box, {
             key: 'team-details',
@@ -190,13 +186,14 @@ const TeamSelectionScreen = ({ onTeamSelect, onBack }) => {
             ...teams.map((team, index) => {
                 const isSelected = index === selectedIndex;
                 const teamName = `${team.city} ${team.name}`;
+                const emoji = team.emoji || '⚾';
                 
                 return React.createElement(Text, {
                     key: team.id,
                     color: isSelected ? 'black' : 'white',
                     backgroundColor: isSelected ? 'cyan' : undefined,
                     bold: isSelected
-                }, ` ${isSelected ? '►' : ' '} ${teamName}`);
+                }, ` ${isSelected ? '►' : ' '} ${emoji} ${teamName}`);
             }),
             
             React.createElement(Box, { key: 'spacer3', height: 2 }),
