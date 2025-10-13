@@ -1,13 +1,21 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Text, Box, useInput } from 'ink';
 import { t } from '../lang/index.js';
+import { getGameState } from '../data/gameState.js';
 
 const Menu = ({ onSelect }) => {
 	const [selectedIndex, setSelectedIndex] = useState(0);
+	const [hasSavedGame, setHasSavedGame] = useState(false);
+	
+	useEffect(() => {
+		const gameState = getGameState();
+		setHasSavedGame(gameState.hasActiveGame());
+	}, []);
 	
 	const menuItems = [
 		{ key: 'newGame', label: t('game.newGame') },
-		{ key: 'continue', label: t('game.continue') },
+		...(hasSavedGame ? [{ key: 'continue', label: t('game.continue') }] : []),
+		{ key: 'teams', label: 'Teams' },
 		{ key: 'settings', label: t('game.settings') },
 		{ key: 'quit', label: t('game.quit') }
 	];

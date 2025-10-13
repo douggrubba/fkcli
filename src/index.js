@@ -1,14 +1,41 @@
 import { render, Text, Box, useInput } from 'ink';
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { cleanupAndExit, enterFullscreen, exitFullscreen, exit } from './util/ui.js';
 import { initLanguageSystem, t } from './lang/index.js';
 import { getConfig } from './config.js';
 import { displayLogo } from './util/logo.js';
 import Menu from './components/Menu.js';
+import TeamsScreen from './components/TeamsScreen.js';
+import TeamSelectionScreen from './components/TeamSelectionScreen.js';
+import GameScreen from './components/GameScreen.js';
+import { initializeGameData, closeGameData } from './data/index.js';
+import { getGameState, initializeGameState } from './data/gameState.js';
 
 const App = () => {
 	const [currentScreen, setCurrentScreen] = useState('welcome');
 	const [showLogo, setShowLogo] = useState(true);
+	
+	// Initialize game data on app start
+	useEffect(() => {
+		try {
+			initializeGameData();
+			
+			// Initialize game state and check for existing save
+			const existingGame = initializeGameState();
+			if (existingGame) {
+				// Resume from where the player left off
+				setCurrentScreen(existingGame.current_screen);
+				setShowLogo(existingGame.current_screen === 'welcome');
+			}
+		} catch (error) {
+			console.error('Failed to initialize game data:', error);
+		}
+		
+		// Cleanup on unmount
+		return () => {
+			closeGameData();
+		};
+	}, []);
 	
 	useInput((input, key) => {
 		if (key.ctrl && input === 'c') {
@@ -23,20 +50,45 @@ const App = () => {
 	});
 	
 	const handleMenuSelect = (menuKey) => {
+		const gameState = getGameState();
+		
 		switch (menuKey) {
 			case 'newGame':
-				setCurrentScreen('newGame');
+				// If there's an active game, delete it before starting new one
+				if (gameState.hasActiveGame()) {
+					gameState.deleteGame();
+				}
+				setCurrentScreen('teamSelection');
 				break;
 			case 'continue':
-				setCurrentScreen('continue');
+				if (gameState.hasActiveGame()) {
+					setCurrentScreen(gameState.getCurrentScreen());
+				} else {
+					// No saved game found
+					setCurrentScreen('noSavedGame');
+				}
 				break;
 			case 'settings':
 				setCurrentScreen('settings');
+				break;
+			case 'teams':
+				setCurrentScreen('teams');
 				break;
 			case 'quit':
 				exit();
 				break;
 		}
+	};
+
+	const handleTeamSelection = (selectedTeam) => {
+		const gameState = getGameState();
+		
+		// Create new game with selected team
+		gameState.createNewGame(selectedTeam.id, `${selectedTeam.city} ${selectedTeam.name} Manager`);
+		
+		// Set screen to game and update state
+		gameState.setCurrentScreen('game');
+		setCurrentScreen('game');
 	};
 	
 	const renderWelcomeScreen = () => {
@@ -79,9 +131,8 @@ const App = () => {
 	
 	const renderGameScreen = (type) => {
 		const messages = {
-			newGame: 'Starting new game...',
-			continue: 'Loading saved game...',
-			settings: 'Settings menu (coming soon...)'
+			settings: 'Settings menu (coming soon...)',
+			noSavedGame: 'No saved game found. Please start a new game.'
 		};
 		
 		return React.createElement(Box, {
@@ -103,9 +154,21 @@ const App = () => {
 			return renderWelcomeScreen();
 		case 'menu':
 			return renderMenuScreen();
-		case 'newGame':
-		case 'continue':
+		case 'teams':
+			return React.createElement(TeamsScreen, { 
+				onBack: () => setCurrentScreen('menu') 
+			});
+		case 'teamSelection':
+			return React.createElement(TeamSelectionScreen, {
+				onTeamSelect: handleTeamSelection,
+				onBack: () => setCurrentScreen('menu')
+			});
+		case 'game':
+			return React.createElement(GameScreen, {
+				onBack: () => setCurrentScreen('menu')
+			});
 		case 'settings':
+		case 'noSavedGame':
 			return renderGameScreen(currentScreen);
 		default:
 			return renderWelcomeScreen();

@@ -1,0 +1,75 @@
+{
+  "teamId": 3,
+  "fullName": "Los Angeles Dodgers",
+  "founded": 1883,
+  "colors": {
+    "primary": "#005A9C",
+    "secondary": "#FFFFFF",
+    "accent": "#EF3E42"
+  },
+  "stadium": {
+    "name": "Dodger Stadium",
+    "capacity": 56000,
+    "opened": 1962,
+    "dimensions": {
+      "leftField": 330,
+      "centerField": 395,
+      "rightField": 330
+    },
+    "features": [
+      "Think Blue",
+      "Chavez Ravine",
+      "Stadium Way"
+    ]
+  },
+  "history": {
+    "championships": [
+      1955,
+      1959,
+      1963,
+      1965,
+      1981,
+      1988,
+      2020
+    ],
+    "retiredNumbers": [
+      1,
+      2,
+      4,
+      19,
+      20,
+      24,
+      25,
+      32,
+      34,
+      39,
+      42,
+      53
+    ],
+    "rivalries": [
+      "San Francisco Giants",
+      "San Diego Padres"
+    ]
+  },
+  "management": {
+    "generalManager": "Brandon Gomes",
+    "manager": "Dave Roberts",
+    "owner": "Guggenheim Baseball Management"
+  },
+  "facilities": {
+    "springTraining": {
+      "location": "Phoenix, AZ",
+      "facility": "Camelback Ranch"
+    },
+    "academy": "Dominican Republic Complex"
+  },
+  "fanbase": {
+    "nickname": "Dodger Blue Faithful",
+    "attendance2024": 3862408,
+    "socialMedia": {
+      "twitter": "@Dodgers",
+      "instagram": "@dodgers"
+    }
+  },
+  "createdAt": "2025-10-13T17:24:36.958Z"
+}

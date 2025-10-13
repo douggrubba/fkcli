@@ -1,0 +1,101 @@
+{
+  "teamId": 2,
+  "fullName": "New York Yankees",
+  "founded": 1903,
+  "colors": {
+    "primary": "#132448",
+    "secondary": "#FFFFFF",
+    "accent": "#C4CED4"
+  },
+  "stadium": {
+    "name": "Yankee Stadium",
+    "capacity": 47309,
+    "opened": 2009,
+    "dimensions": {
+      "leftField": 318,
+      "centerField": 408,
+      "rightField": 314
+    },
+    "features": [
+      "Monument Park",
+      "Frieze",
+      "Great Hall"
+    ]
+  },
+  "history": {
+    "championships": [
+      1923,
+      1927,
+      1928,
+      1932,
+      1936,
+      1937,
+      1938,
+      1939,
+      1941,
+      1943,
+      1947,
+      1949,
+      1950,
+      1951,
+      1952,
+      1953,
+      1956,
+      1958,
+      1961,
+      1962,
+      1977,
+      1978,
+      1996,
+      1998,
+      1999,
+      2000,
+      2009
+    ],
+    "retiredNumbers": [
+      1,
+      3,
+      4,
+      5,
+      7,
+      8,
+      10,
+      15,
+      16,
+      20,
+      23,
+      32,
+      37,
+      42,
+      44,
+      46,
+      49,
+      51
+    ],
+    "rivalries": [
+      "Boston Red Sox",
+      "New York Mets"
+    ]
+  },
+  "management": {
+    "generalManager": "Brian Cashman",
+    "manager": "Aaron Boone",
+    "owner": "Hal Steinbrenner"
+  },
+  "facilities": {
+    "springTraining": {
+      "location": "Tampa, FL",
+      "facility": "George M. Steinbrenner Field"
+    },
+    "academy": "Yankees Dominican Academy"
+  },
+  "fanbase": {
+    "nickname": "Yankee Universe",
+    "attendance2024": 3204286,
+    "socialMedia": {
+      "twitter": "@Yankees",
+      "instagram": "@yankees"
+    }
+  },
+  "createdAt": "2025-10-13T17:24:36.943Z"
+}
