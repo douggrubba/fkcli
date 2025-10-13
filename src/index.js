@@ -47,6 +47,7 @@ const App = () => {
 			alignItems: 'center',
 			flexDirection: 'column'
 		}, [
+			React.createElement(Box, { key: 'spacer0', height: 20 }),
 			React.createElement(Text, { key: 'logo' }, displayLogo()),
 			React.createElement(Box, { key: 'spacer1', height: 1 }),
 			React.createElement(Text, { key: 'welcome', color: 'green', bold: true }, t('ui.welcome')),
@@ -66,6 +67,7 @@ const App = () => {
 			alignItems: 'center',
 			flexDirection: 'column'
 		}, [
+			React.createElement(Box, { key: 'spacer0', height: 20 }),
 			showLogo && React.createElement(Text, { key: 'logo' }, displayLogo()),
 			showLogo && React.createElement(Box, { key: 'spacer1', height: 1 }),
 			React.createElement(Text, { key: 'welcome', color: 'green', bold: true }, t('ui.welcome')),
@@ -89,6 +91,7 @@ const App = () => {
 			alignItems: 'center',
 			flexDirection: 'column'
 		}, [
+			React.createElement(Box, { key: 'spacer0', height: 20 }),
 			React.createElement(Text, { key: 'message', color: 'cyan' }, messages[type] || 'Game screen'),
 			React.createElement(Box, { key: 'spacer', height: 2 }),
 			React.createElement(Text, { key: 'exit', color: 'gray' }, t('ui.exit'))
