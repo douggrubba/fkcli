@@ -1,6 +1,6 @@
 // Sample data for testing the hybrid database system
 
-import { ASCII_TEAM_LOGO } from './team-logo.js';
+import { ASCII_TEAM_LOGO } from "./team-logo.js";
 
 export const sampleTeams = [
     {
@@ -91,7 +91,11 @@ export const sampleTeams = [
                 features: ["Monument Park", "Frieze", "Great Hall"]
             },
             history: {
-                championships: [1923, 1927, 1928, 1932, 1936, 1937, 1938, 1939, 1941, 1943, 1947, 1949, 1950, 1951, 1952, 1953, 1956, 1958, 1961, 1962, 1977, 1978, 1996, 1998, 1999, 2000, 2009],
+                championships: [
+                    1923, 1927, 1928, 1932, 1936, 1937, 1938, 1939, 1941, 1943, 1947, 1949, 1950,
+                    1951, 1952, 1953, 1956, 1958, 1961, 1962, 1977, 1978, 1996, 1998, 1999, 2000,
+                    2009
+                ],
                 retiredNumbers: [1, 3, 4, 5, 7, 8, 10, 15, 16, 20, 23, 32, 37, 42, 44, 46, 49, 51],
                 rivalries: ["Boston Red Sox", "New York Mets"]
             },
@@ -176,25 +180,25 @@ export const sampleTeams = [
 ];
 
 export const initializeSampleData = (db) => {
-    console.log('Initializing sample team data...');
-    
+    console.log("Initializing sample team data...");
+
     sampleTeams.forEach(({ database, profile }) => {
         // Create the complete team (both database record and profile)
         const result = db.createCompleteTeam(database, profile);
-        
+
         if (result.success) {
             console.log(`✅ Created ${database.city} ${database.name}`);
-            
+
             // Add some sample wins/losses
             const wins = Math.floor(Math.random() * 50) + 30; // 30-80 wins
             const losses = Math.floor(Math.random() * 50) + 30; // 30-80 losses
             db.updateTeamRecord(database.id, wins, losses);
-            
+
             console.log(`   Record: ${wins}-${losses}`);
         } else {
             console.log(`❌ Failed to create ${database.city} ${database.name}`);
         }
     });
-    
-    console.log('Sample data initialization complete!');
+
+    console.log("Sample data initialization complete!");
 };

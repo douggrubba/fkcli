@@ -168,6 +168,9 @@ const App = () => {
 				onBack: () => setCurrentScreen('menu')
 			});
 		case 'settings':
+			return React.createElement(SettingsScreen, {
+				onBack: () => setCurrentScreen('menu')
+			});
 		case 'noSavedGame':
 			return renderGameScreen(currentScreen);
 		default:

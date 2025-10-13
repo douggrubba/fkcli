@@ -1,17 +1,17 @@
-import Database from 'better-sqlite3';
-import { readFileSync, writeFileSync, existsSync, mkdirSync } from 'fs';
-import { join, dirname } from 'path';
+import Database from "better-sqlite3";
+import { readFileSync, writeFileSync, existsSync, mkdirSync } from "fs";
+import { join, dirname } from "path";
 
 class GameDatabase {
-    constructor(dbPath = 'game.db', dataDir = './data') {
+    constructor(dbPath = "game.db", dataDir = "./data") {
         this.db = new Database(dbPath);
         this.dataDir = dataDir;
-        
+
         // Ensure data directory exists
         if (!existsSync(this.dataDir)) {
             mkdirSync(this.dataDir, { recursive: true });
         }
-        
+
         this.initializeTables();
     }
 
@@ -52,15 +52,23 @@ class GameDatabase {
     // ===============================
     // SQLITE OPERATIONS (Relational)
     // ===============================
-    
+
     createTeam(teamData) {
-        const { id, name, city, league, division, season = new Date().getFullYear(), emoji = '⚾' } = teamData;
-        
+        const {
+            id,
+            name,
+            city,
+            league,
+            division,
+            season = new Date().getFullYear(),
+            emoji = "⚾"
+        } = teamData;
+
         const stmt = this.db.prepare(`
             INSERT OR REPLACE INTO teams (id, name, city, league, division, season, wins, losses, emoji)
             VALUES (?, ?, ?, ?, ?, ?, 0, 0, ?)
         `);
-        
+
         return stmt.run(id, name, city, league, division, season, emoji);
     }
 
@@ -106,7 +114,7 @@ class GameDatabase {
             query += ` AND league = ?`;
             params.push(league);
         }
-        
+
         if (division) {
             query += ` AND division = ?`;
             params.push(division);
@@ -123,11 +131,11 @@ class GameDatabase {
     // ===============================
 
     getTeamProfile(teamId) {
-        const path = join(this.dataDir, 'teams', `${teamId}.json`);
+        const path = join(this.dataDir, "teams", `${teamId}.json`);
         if (!existsSync(path)) return null;
-        
+
         try {
-            return JSON.parse(readFileSync(path, 'utf8'));
+            return JSON.parse(readFileSync(path, "utf8"));
         } catch (error) {
             console.error(`Error reading team profile ${teamId}:`, error);
             return null;
@@ -135,13 +143,13 @@ class GameDatabase {
     }
 
     saveTeamProfile(teamId, profile) {
-        const teamDir = join(this.dataDir, 'teams');
+        const teamDir = join(this.dataDir, "teams");
         if (!existsSync(teamDir)) {
             mkdirSync(teamDir, { recursive: true });
         }
 
         const path = join(teamDir, `${teamId}.json`);
-        
+
         try {
             writeFileSync(path, JSON.stringify(profile, null, 2));
             return true;
@@ -181,7 +189,7 @@ class GameDatabase {
     createCompleteTeam(teamData, profileData) {
         // Create the relational record
         const result = this.createTeam(teamData);
-        
+
         // Save the profile data
         const profileSaved = this.saveTeamProfile(teamData.id, {
             teamId: teamData.id,
@@ -200,12 +208,12 @@ class GameDatabase {
     // GAME SAVE OPERATIONS
     // ===============================
 
-    createNewGame(playerTeamId, saveName = 'Default Save') {
+    createNewGame(playerTeamId, saveName = "Default Save") {
         const db = this.db;
-        
+
         // Deactivate any existing saves
-        db.prepare('UPDATE game_saves SET is_active = 0').run();
-        
+        db.prepare("UPDATE game_saves SET is_active = 0").run();
+
         // Create new game save
         const gameData = {
             playerTeamId: playerTeamId,
@@ -217,12 +225,12 @@ class GameDatabase {
                 seasonsPlayed: 0
             }
         };
-        
+
         const stmt = db.prepare(`
             INSERT INTO game_saves (save_name, player_team_id, current_screen, game_data, is_active)
             VALUES (?, ?, 'game', ?, 1)
         `);
-        
+
         const result = stmt.run(saveName, playerTeamId, JSON.stringify(gameData));
         return { saveId: result.lastInsertRowid, ...gameData };
     }
@@ -231,27 +239,27 @@ class GameDatabase {
         const stmt = this.db.prepare(`
             SELECT * FROM game_saves WHERE is_active = 1 LIMIT 1
         `);
-        
+
         const save = stmt.get();
         if (!save) return null;
-        
+
         return {
             ...save,
-            game_data: JSON.parse(save.game_data || '{}')
+            game_data: JSON.parse(save.game_data || "{}")
         };
     }
 
     updateGameState(currentScreen, additionalData = {}) {
         const activeGame = this.getActiveGame();
         if (!activeGame) return false;
-        
+
         // Merge new data with existing game data
         const updatedGameData = {
             ...activeGame.game_data,
             ...additionalData,
             lastUpdated: new Date().toISOString()
         };
-        
+
         const stmt = this.db.prepare(`
             UPDATE game_saves 
             SET current_screen = ?, 
@@ -259,7 +267,7 @@ class GameDatabase {
                 updated_at = CURRENT_TIMESTAMP 
             WHERE is_active = 1
         `);
-        
+
         return stmt.run(currentScreen, JSON.stringify(updatedGameData));
     }
 
@@ -269,7 +277,7 @@ class GameDatabase {
     }
 
     deleteActiveGame() {
-        const stmt = this.db.prepare('DELETE FROM game_saves WHERE is_active = 1');
+        const stmt = this.db.prepare("DELETE FROM game_saves WHERE is_active = 1");
         return stmt.run();
     }
 

@@ -2,46 +2,46 @@
 
 export const TEAM_EMOJIS = {
     // American League East
-    'Boston Red Sox': '🧦',
-    'New York Yankees': '🎩',
-    'Tampa Bay Rays': '⚡',
-    'Toronto Blue Jays': '🔵',
-    'Baltimore Orioles': '🐦',
+    "Boston Red Sox": "🧦",
+    "New York Yankees": "🎩",
+    "Tampa Bay Rays": "⚡",
+    "Toronto Blue Jays": "🔵",
+    "Baltimore Orioles": "🐦",
 
     // American League Central
-    'Chicago White Sox': '🤍',
-    'Cleveland Guardians': '🛡️',
-    'Detroit Tigers': '🐅',
-    'Kansas City Royals': '👑',
-    'Minnesota Twins': '👯',
+    "Chicago White Sox": "🤍",
+    "Cleveland Guardians": "🛡️",
+    "Detroit Tigers": "🐅",
+    "Kansas City Royals": "👑",
+    "Minnesota Twins": "👯",
 
     // American League West
-    'Houston Astros': '🚀',
-    'Los Angeles Angels': '😇',
-    'Oakland Athletics': '🟢',
-    'Seattle Mariners': '⚓',
-    'Texas Rangers': '🤠',
+    "Houston Astros": "🚀",
+    "Los Angeles Angels": "😇",
+    "Oakland Athletics": "🟢",
+    "Seattle Mariners": "⚓",
+    "Texas Rangers": "🤠",
 
     // National League East
-    'Atlanta Braves': '🪓',
-    'Miami Marlins': '🐠',
-    'New York Mets': '🗽',
-    'Philadelphia Phillies': '🔔',
-    'Washington Nationals': '🏛️',
+    "Atlanta Braves": "🪓",
+    "Miami Marlins": "🐠",
+    "New York Mets": "🗽",
+    "Philadelphia Phillies": "🔔",
+    "Washington Nationals": "🏛️",
 
     // National League Central
-    'Chicago Cubs': '🐻',
-    'Cincinnati Reds': '🔴',
-    'Milwaukee Brewers': '🍺',
-    'Pittsburgh Pirates': '🏴‍☠️',
-    'St. Louis Cardinals': '🐦',
+    "Chicago Cubs": "🐻",
+    "Cincinnati Reds": "🔴",
+    "Milwaukee Brewers": "🍺",
+    "Pittsburgh Pirates": "🏴‍☠️",
+    "St. Louis Cardinals": "🐦",
 
     // National League West
-    'Arizona Diamondbacks': '🐍',
-    'Colorado Rockies': '🗻',
-    'Los Angeles Dodgers': '💙',
-    'San Diego Padres': '🏛️',
-    'San Francisco Giants': '🗻'
+    "Arizona Diamondbacks": "🐍",
+    "Colorado Rockies": "🗻",
+    "Los Angeles Dodgers": "💙",
+    "San Diego Padres": "🏛️",
+    "San Francisco Giants": "🗻"
 };
 
 /**
@@ -52,7 +52,7 @@ export const TEAM_EMOJIS = {
  */
 export function getTeamEmoji(city, name) {
     const teamKey = `${city} ${name}`;
-    return TEAM_EMOJIS[teamKey] || '⚾';
+    return TEAM_EMOJIS[teamKey] || "⚾";
 }
 
 /**
