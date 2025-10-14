@@ -9,7 +9,7 @@ const SettingsScreen = ({ onBack }) => {
     const [selectedOption, setSelectedOption] = useState(0);
     const [selectedLanguage, setSelectedLanguage] = useState(0);
     const [showMessage, setShowMessage] = useState("");
-    const [languageChanged, setLanguageChanged] = useState(0); // Force re-render when language changes
+    // Note: we rely on local state updates (selectedLanguage/showMessage) to re-render
 
     const availableLanguages = Object.keys(LANGUAGES);
 
@@ -34,8 +34,16 @@ const SettingsScreen = ({ onBack }) => {
                 setSelectedOption(Math.max(0, selectedOption - 1));
             } else if (key.downArrow) {
                 setSelectedOption(Math.min(2, selectedOption + 1));
-            } else if (key.return || input === "1" || input === "2" || input === "3") {
-                const option = input ? parseInt(input) - 1 : selectedOption;
+            } else if (
+                key.return ||
+                key.space ||
+                input === "\r" ||
+                input === "1" ||
+                input === "2" ||
+                input === "3"
+            ) {
+                const numeric = ["1", "2", "3"].includes(input) ? parseInt(input, 10) - 1 : null;
+                const option = numeric !== null ? numeric : selectedOption;
                 if (option === 0) {
                     // Change Language
                     setCurrentView("language");
@@ -54,16 +62,22 @@ const SettingsScreen = ({ onBack }) => {
                 setSelectedLanguage(Math.max(0, selectedLanguage - 1));
             } else if (key.downArrow) {
                 setSelectedLanguage(Math.min(availableLanguages.length - 1, selectedLanguage + 1));
-            } else if (key.return) {
-                // Change language
+            } else if (input && /[1-9]/.test(input)) {
+                // Direct numeric selection
+                const idx = parseInt(input, 10) - 1;
+                if (idx >= 0 && idx < availableLanguages.length) {
+                    setSelectedLanguage(idx);
+                }
+            } else if (key.return || key.space || input === "\r") {
+                // Apply selected language
                 const newLang = availableLanguages[selectedLanguage];
                 const success = setLanguage(newLang);
                 if (success) {
-                    // Save to config
                     setConfig("language", newLang);
-                    // Force re-render to show new language
-                    setLanguageChanged(prev => prev + 1);
-                    setShowMessage(`${t("settings.language.changed")} ${getLanguageName(newLang)}!`);
+                    setSelectedLanguage(availableLanguages.indexOf(newLang));
+                    setShowMessage(
+                        `${t("settings.language.changed")} ${getLanguageName(newLang)}!`
+                    );
                     setTimeout(() => setShowMessage(""), 2000);
                 }
             }
@@ -117,11 +131,8 @@ const SettingsScreen = ({ onBack }) => {
                 { key: "exit", color: "gray", dimColor: true },
                 t("settings.exit")
             ),
-            showMessage && React.createElement(
-                Text,
-                { key: "message", color: "green" },
-                showMessage
-            )
+            showMessage &&
+                React.createElement(Text, { key: "message", color: "green" }, showMessage)
         ];
     };
 
@@ -145,28 +156,30 @@ const SettingsScreen = ({ onBack }) => {
             React.createElement(Box, { key: "spacer2", height: 1 }),
             React.createElement(Text, { key: "instruction" }, t("settings.language.select")),
             React.createElement(Box, { key: "spacer3", height: 1 }),
-            ...availableLanguages.map((lang, index) => 
-                React.createElement(
+            ...availableLanguages.map((lang, index) => {
+                const isSelected = selectedLanguage === index;
+                const isCurrent = getCurrentLanguage() === lang;
+                const label = `${index + 1}. ${getLanguageName(lang)}${
+                    isCurrent ? " (current)" : ""
+                }`;
+                return React.createElement(
                     Text,
                     {
                         key: `lang-${lang}`,
-                        color: selectedLanguage === index ? "yellow" : "white",
-                        backgroundColor: selectedLanguage === index ? "blue" : undefined
+                        color: isSelected ? "yellow" : "white",
+                        backgroundColor: isSelected ? "blue" : undefined
                     },
-                    `${index + 1}. ${getLanguageName(lang)}`
-                )
-            ),
+                    label
+                );
+            }),
             React.createElement(Box, { key: "spacer4", height: 1 }),
             React.createElement(
                 Text,
                 { key: "exit", color: "gray", dimColor: true },
                 t("settings.exit")
             ),
-            showMessage && React.createElement(
-                Text,
-                { key: "message", color: "green" },
-                showMessage
-            )
+            showMessage &&
+                React.createElement(Text, { key: "message", color: "green" }, showMessage)
         ];
     };
 

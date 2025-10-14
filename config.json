@@ -1,0 +1,11 @@
+{
+  "language": "en",
+  "ui": {
+    "fullscreen": true,
+    "exitOnCtrlC": true
+  },
+  "game": {
+    "difficulty": "normal",
+    "soundEnabled": true
+  }
+}

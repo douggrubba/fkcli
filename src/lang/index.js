@@ -20,13 +20,36 @@ const languages = {
 // Current language (default to English)
 let currentLanguage = "en";
 
+// Subscribers to language changes
+const languageListeners = new Set();
+
+// Subscribe to language changes; returns unsubscribe function
+export const onLanguageChange = (listener) => {
+    if (typeof listener === "function") {
+        languageListeners.add(listener);
+        return () => languageListeners.delete(listener);
+    }
+    return () => {};
+};
+
 // Get current language code
 export const getCurrentLanguage = () => currentLanguage;
 
 // Set current language
 export const setLanguage = (langCode) => {
     if (languages[langCode]) {
+        const changed = currentLanguage !== langCode;
         currentLanguage = langCode;
+        if (changed) {
+            // Notify subscribers
+            languageListeners.forEach((fn) => {
+                try {
+                    fn(currentLanguage);
+                } catch {
+                    // ignore subscriber errors
+                }
+            });
+        }
         return true;
     }
     console.warn(`Language '${langCode}' not available. Using default (${currentLanguage})`);
