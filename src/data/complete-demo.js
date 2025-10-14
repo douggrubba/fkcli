@@ -2,7 +2,7 @@
 
 import GameDatabase from "./database.js";
 import { getGameState } from "./gameState.js";
-import { initializeSampleData } from "./sample-data.js";
+import { initializeTeamsFromFiles } from "./team-loader.js";
 
 async function runCompleteDemo() {
     console.log("🏟️  Complete Baseball Game Demo - New Game Creation & Persistence\n");
@@ -10,8 +10,8 @@ async function runCompleteDemo() {
     // Initialize fresh database
     const db = new GameDatabase();
 
-    // Initialize with sample teams
-    initializeSampleData(db);
+    // Initialize with teams from JSON files
+    initializeTeamsFromFiles(db);
 
     console.log("📋 AVAILABLE TEAMS:");
     console.log("==================");
@@ -26,7 +26,7 @@ async function runCompleteDemo() {
     console.log("\n🎮 SIMULATING NEW GAME CREATION:");
     console.log("================================");
 
-    // Simulate selecting Boston Red Sox (team ID 1)
+    // Simulate selecting Boston (team ID 1)
     const selectedTeam = teams.find((t) => t.id === 1);
     console.log(`Selected Team: ${selectedTeam.city} ${selectedTeam.name}`);
 

@@ -1,75 +1,49 @@
 {
   "teamId": 1,
-  "fullName": "Boston Red Sox",
-  "founded": 1901,
+  "fullName": "Boston Harbor Kings",
+  "founded": 2025,
   "colors": {
     "primary": "#BD3039",
     "secondary": "#0C2340",
     "accent": "#FFFFFF"
   },
   "stadium": {
-    "name": "Fenway Park",
-    "capacity": 37755,
-    "opened": 1912,
+    "name": "Liberty Wharf Park",
+    "capacity": 32150,
+    "opened": 2025,
     "dimensions": {
-      "leftField": 310,
-      "centerField": 420,
-      "rightField": 302
+      "lf": 334,
+      "lcf": 372,
+      "cf": 404,
+      "rcf": 377,
+      "rf": 310
     },
-    "features": [
-      "Green Monster",
-      "Pesky's Pole",
-      "Manual Scoreboard"
-    ]
+    "features": []
   },
   "history": {
-    "championships": [
-      1903,
-      1912,
-      1915,
-      1916,
-      1918,
-      2004,
-      2007,
-      2013,
-      2018
-    ],
-    "retiredNumbers": [
-      1,
-      4,
-      6,
-      8,
-      9,
-      14,
-      26,
-      27,
-      34,
-      42
-    ],
-    "rivalries": [
-      "New York Yankees",
-      "Tampa Bay Rays"
-    ]
+    "championships": [],
+    "retiredNumbers": [],
+    "rivalries": []
   },
   "management": {
-    "generalManager": "Chaim Bloom",
-    "manager": "Alex Cora",
-    "owner": "John Henry"
+    "generalManager": "Casey Dempsey",
+    "manager": "Rico Maldonado",
+    "owner": "Wharf Baseball Group, LLC"
   },
   "facilities": {
     "springTraining": {
-      "location": "Fort Myers, FL",
-      "facility": "JetBlue Park"
+      "location": "Unknown",
+      "facility": "Unknown"
     },
-    "academy": "Dominican Republic Baseball Academy"
+    "academy": "Unknown"
   },
   "fanbase": {
-    "nickname": "Red Sox Nation",
-    "attendance2024": 2863914,
+    "nickname": "#RuleTheHarbor",
+    "attendance2024": 0,
     "socialMedia": {
-      "twitter": "@RedSox",
-      "instagram": "@redsox"
+      "twitter": "@unknown",
+      "instagram": "@unknown"
     }
   },
-  "createdAt": "2025-10-13T19:56:51.751Z"
+  "createdAt": "2025-10-14T16:56:43.933Z"
 }

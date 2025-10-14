@@ -1,7 +1,7 @@
 // Main export for the data system
 
 import GameDatabase from "./database.js";
-import { initializeSampleData } from "./sample-data.js";
+import { initializeTeamsFromFiles } from "./team-loader.js";
 
 // Singleton instance for the game
 let gameDb = null;
@@ -10,11 +10,11 @@ export const initializeGameData = (dbPath = "game.db", dataDir = "./data") => {
     if (!gameDb) {
         gameDb = new GameDatabase(dbPath, dataDir);
 
-        // Check if we need to initialize with sample data
+        // Check if we need to initialize with team data
         const standings = gameDb.getStandings();
         if (standings.length === 0) {
-            console.log("No teams found. Initializing with sample data...");
-            initializeSampleData(gameDb);
+            console.log("No teams found. Initializing with team data from JSON files...");
+            initializeTeamsFromFiles(gameDb, dataDir);
         }
     }
 
