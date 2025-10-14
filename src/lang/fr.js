@@ -19,6 +19,22 @@ export const fr = {
         quit: "Quitter"
     },
 
+    // Settings Screen
+    settings: {
+        title: "Paramètres du Jeu",
+        instruction: "Utilisez les flèches ↑↓ pour naviguer, Entrée pour sélectionner",
+        option1: "Changer la Langue",
+        option2: "Difficulté du Jeu",
+        option3: "Paramètres Audio",
+        exit: "Appuyez sur ESC ou Q pour revenir au menu",
+        language: {
+            title: "Sélectionner la Langue",
+            current: "Langue actuelle",
+            select: "Sélectionnez une langue:",
+            changed: "Langue changée vers"
+        }
+    },
+
     // Error Messages
     errors: {
         generic: "Une erreur s'est produite",

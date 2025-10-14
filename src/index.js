@@ -8,6 +8,7 @@ import Menu from './components/Menu.js';
 import TeamsScreen from './components/TeamsScreen.js';
 import TeamSelectionScreen from './components/TeamSelectionScreen.js';
 import GameScreen from './components/GameScreen.js';
+import SettingsScreen from './components/SettingsScreen.js';
 import { initializeGameData, closeGameData } from './data/index.js';
 import { getGameState, initializeGameState } from './data/gameState.js';
 

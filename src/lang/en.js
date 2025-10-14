@@ -26,7 +26,13 @@ export const en = {
         option1: "Change Language",
         option2: "Game Difficulty",
         option3: "Audio Settings",
-        exit: "Press ESC or Q to go back to menu"
+        exit: "Press ESC or Q to go back to menu",
+        language: {
+            title: "Select Language",
+            current: "Current language",
+            select: "Select a language:",
+            changed: "Language changed to"
+        }
     },
 
     // Error Messages
