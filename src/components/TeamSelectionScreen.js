@@ -251,10 +251,24 @@ const TeamSelectionScreen = ({ onTeamSelect, onBack }) => {
                     // team.city team.name team.emoji
 
                     // might not be needed but hasBelow && hasAbove
+
+                    React.createElement(
+                        Text,
+                        { key: "prevTeam", color: "gray" },
+                        teams[selectedIndex - 1 > -1 ? selectedIndex - 1 : selectedIndex.length - 1]
+                            ?.name
+                    ),
+
                     React.createElement(
                         Text,
                         { key: "selectedTeam", color: "cyan" },
                         teams[selectedIndex]?.name
+                    ),
+
+                    React.createElement(
+                        Text,
+                        { key: "nextTeam", color: "gray" },
+                        teams[selectedIndex + 1 < teams.length - 1 ? selectedIndex + 1 : 0]?.name
                     ),
 
                     React.createElement(Box, { key: "spacer3", height: 2 }),
