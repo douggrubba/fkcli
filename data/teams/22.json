@@ -1,54 +1,51 @@
 {
-  "teamId": 22,
-  "fullName": "Columbus Explorers",
-  "city": "Columbus",
-  "name": "Explorers",
-  "league": "National League",
-  "division": "Central",
-  "founded": 2025,
-  "colors": {
-    "primary": "#2563EB",
-    "secondary": "#FBBF24",
-    "accent": "#E5E7EB"
-  },
-  "stadium": {
-    "name": "Scioto River Park",
-    "capacity": 36000,
-    "opened": 2025,
-    "dimensions": {
-      "leftField": 332,
-      "centerField": 404,
-      "rightField": 330
+    "teamId": 22,
+    "fullName": "Columbus Explorers",
+    "city": "Columbus",
+    "name": "Explorers",
+    "league": "National League",
+    "division": "Central",
+    "founded": 2025,
+    "colors": {
+        "primary": "#2563EB",
+        "secondary": "#FBBF24",
+        "accent": "#E5E7EB"
     },
-    "features": [
-      "Short North Porch",
-      "Arena District Deck"
-    ]
-  },
-  "history": {
-    "championships": [],
-    "retiredNumbers": [],
-    "rivalries": ["Cincinnati Reds", "Cleveland Guardians", "Detroit Tigers"]
-  },
-  "management": {
-    "generalManager": "Dylan Mercer",
-    "manager": "Sergio Morales",
-    "owner": "Buckeye State Sports Group"
-  },
-  "facilities": {
-    "springTraining": {
-      "location": "Clearwater, FL",
-      "facility": "Explorer Spring Grounds"
+    "stadium": {
+        "name": "Scioto River Park",
+        "capacity": 36000,
+        "opened": 2025,
+        "dimensions": {
+            "leftField": 332,
+            "centerField": 404,
+            "rightField": 330
+        },
+        "features": ["Short North Porch", "Arena District Deck"]
     },
-    "academy": "Ohio Prospects Academy"
-  },
-  "fanbase": {
-    "nickname": "#ExploreMore",
-    "attendance2024": 1126000,
-    "socialMedia": {
-      "twitter": "@cbusexplorers",
-      "instagram": "@cbusexplorers"
-    }
-  },
-  "createdAt": "2025-10-15T00:00:00.000Z"
+    "history": {
+        "championships": [],
+        "retiredNumbers": [],
+        "rivalries": ["Cincinnati Reds", "Cleveland Guardians", "Detroit Tigers"]
+    },
+    "management": {
+        "generalManager": "Dylan Mercer",
+        "manager": "Sergio Morales",
+        "owner": "Buckeye State Sports Group"
+    },
+    "facilities": {
+        "springTraining": {
+            "location": "Clearwater, FL",
+            "facility": "Explorer Spring Grounds"
+        },
+        "academy": "Ohio Prospects Academy"
+    },
+    "fanbase": {
+        "nickname": "#ExploreMore",
+        "attendance2024": 1126000,
+        "socialMedia": {
+            "twitter": "@cbusexplorers",
+            "instagram": "@cbusexplorers"
+        }
+    },
+    "createdAt": "2025-10-15T00:00:00.000Z"
 }

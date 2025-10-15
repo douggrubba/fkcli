@@ -1,54 +1,51 @@
 {
-  "teamId": 18,
-  "fullName": "Louisville Sluggers",
-  "city": "Louisville",
-  "name": "Sluggers",
-  "league": "National League",
-  "division": "Central",
-  "founded": 2025,
-  "colors": {
-    "primary": "#1F2937",
-    "secondary": "#EF4444",
-    "accent": "#E5E7EB"
-  },
-  "stadium": {
-    "name": "Derby City Park",
-    "capacity": 37000,
-    "opened": 2025,
-    "dimensions": {
-      "leftField": 333,
-      "centerField": 403,
-      "rightField": 330
+    "teamId": 18,
+    "fullName": "Louisville Sluggers",
+    "city": "Louisville",
+    "name": "Sluggers",
+    "league": "National League",
+    "division": "Central",
+    "founded": 2025,
+    "colors": {
+        "primary": "#1F2937",
+        "secondary": "#EF4444",
+        "accent": "#E5E7EB"
     },
-    "features": [
-      "Slugger Alley",
-      "Twin Spires Terrace"
-    ]
-  },
-  "history": {
-    "championships": [],
-    "retiredNumbers": [],
-    "rivalries": ["Cincinnati Reds", "St. Louis Cardinals", "Chicago Cubs"]
-  },
-  "management": {
-    "generalManager": "Harper Quinn",
-    "manager": "Darius Boone",
-    "owner": "River City Baseball Group"
-  },
-  "facilities": {
-    "springTraining": {
-      "location": "Bradenton, FL",
-      "facility": "Bluegrass Spring Grounds"
+    "stadium": {
+        "name": "Derby City Park",
+        "capacity": 37000,
+        "opened": 2025,
+        "dimensions": {
+            "leftField": 333,
+            "centerField": 403,
+            "rightField": 330
+        },
+        "features": ["Slugger Alley", "Twin Spires Terrace"]
     },
-    "academy": "Kentucky Prospects Academy"
-  },
-  "fanbase": {
-    "nickname": "#DerbyDingers",
-    "attendance2024": 1249000,
-    "socialMedia": {
-      "twitter": "@lvsluggers",
-      "instagram": "@lvsluggers"
-    }
-  },
-  "createdAt": "2025-10-15T00:00:00.000Z"
+    "history": {
+        "championships": [],
+        "retiredNumbers": [],
+        "rivalries": ["Cincinnati Reds", "St. Louis Cardinals", "Chicago Cubs"]
+    },
+    "management": {
+        "generalManager": "Harper Quinn",
+        "manager": "Darius Boone",
+        "owner": "River City Baseball Group"
+    },
+    "facilities": {
+        "springTraining": {
+            "location": "Bradenton, FL",
+            "facility": "Bluegrass Spring Grounds"
+        },
+        "academy": "Kentucky Prospects Academy"
+    },
+    "fanbase": {
+        "nickname": "#DerbyDingers",
+        "attendance2024": 1249000,
+        "socialMedia": {
+            "twitter": "@lvsluggers",
+            "instagram": "@lvsluggers"
+        }
+    },
+    "createdAt": "2025-10-15T00:00:00.000Z"
 }

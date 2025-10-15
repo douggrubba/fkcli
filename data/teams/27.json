@@ -1,54 +1,51 @@
 {
-  "teamId": 27,
-  "fullName": "Richmond Rivermen",
-  "city": "Richmond",
-  "name": "Rivermen",
-  "league": "American League",
-  "division": "East",
-  "founded": 2025,
-  "colors": {
-    "primary": "#1E40AF",
-    "secondary": "#059669",
-    "accent": "#93C5FD"
-  },
-  "stadium": {
-    "name": "James River Yard",
-    "capacity": 35000,
-    "opened": 2025,
-    "dimensions": {
-      "leftField": 333,
-      "centerField": 404,
-      "rightField": 329
+    "teamId": 27,
+    "fullName": "Richmond Rivermen",
+    "city": "Richmond",
+    "name": "Rivermen",
+    "league": "American League",
+    "division": "East",
+    "founded": 2025,
+    "colors": {
+        "primary": "#1E40AF",
+        "secondary": "#059669",
+        "accent": "#93C5FD"
     },
-    "features": [
-      "Pony Pasture Porch",
-      "Canal Walk Terrace"
-    ]
-  },
-  "history": {
-    "championships": [],
-    "retiredNumbers": [],
-    "rivalries": ["Baltimore Orioles", "Washington Nationals", "New York Yankees"]
-  },
-  "management": {
-    "generalManager": "Quinn Foster",
-    "manager": "Aidan Murphy",
-    "owner": "Commonwealth Sports Group"
-  },
-  "facilities": {
-    "springTraining": {
-      "location": "Clearwater, FL",
-      "facility": "Riverman Spring Grounds"
+    "stadium": {
+        "name": "James River Yard",
+        "capacity": 35000,
+        "opened": 2025,
+        "dimensions": {
+            "leftField": 333,
+            "centerField": 404,
+            "rightField": 329
+        },
+        "features": ["Pony Pasture Porch", "Canal Walk Terrace"]
     },
-    "academy": "Virginia Baseball Institute"
-  },
-  "fanbase": {
-    "nickname": "#RollOn",
-    "attendance2024": 1023000,
-    "socialMedia": {
-      "twitter": "@rvamlb",
-      "instagram": "@rvamlb"
-    }
-  },
-  "createdAt": "2025-10-15T00:00:00.000Z"
+    "history": {
+        "championships": [],
+        "retiredNumbers": [],
+        "rivalries": ["Baltimore Orioles", "Washington Nationals", "New York Yankees"]
+    },
+    "management": {
+        "generalManager": "Quinn Foster",
+        "manager": "Aidan Murphy",
+        "owner": "Commonwealth Sports Group"
+    },
+    "facilities": {
+        "springTraining": {
+            "location": "Clearwater, FL",
+            "facility": "Riverman Spring Grounds"
+        },
+        "academy": "Virginia Baseball Institute"
+    },
+    "fanbase": {
+        "nickname": "#RollOn",
+        "attendance2024": 1023000,
+        "socialMedia": {
+            "twitter": "@rvamlb",
+            "instagram": "@rvamlb"
+        }
+    },
+    "createdAt": "2025-10-15T00:00:00.000Z"
 }

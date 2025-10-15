@@ -1,54 +1,51 @@
 {
-  "teamId": 17,
-  "fullName": "Austin Armadillos",
-  "city": "Austin",
-  "name": "Armadillos",
-  "league": "American League",
-  "division": "West",
-  "founded": 2026,
-  "colors": {
-    "primary": "#9C27B0",
-    "secondary": "#4CAF50",
-    "accent": "#F3E5F5"
-  },
-  "stadium": {
-    "name": "Live Oak Park",
-    "capacity": 36000,
-    "opened": 2026,
-    "dimensions": {
-      "leftField": 334,
-      "centerField": 405,
-      "rightField": 326
+    "teamId": 17,
+    "fullName": "Austin Armadillos",
+    "city": "Austin",
+    "name": "Armadillos",
+    "league": "American League",
+    "division": "West",
+    "founded": 2026,
+    "colors": {
+        "primary": "#9C27B0",
+        "secondary": "#4CAF50",
+        "accent": "#F3E5F5"
     },
-    "features": [
-      "Bat Bridge",
-      "Armadillo Hill"
-    ]
-  },
-  "history": {
-    "championships": [],
-    "retiredNumbers": [],
-    "rivalries": ["Houston Astros", "Texas Rangers"]
-  },
-  "management": {
-    "generalManager": "Maya Castillo",
-    "manager": "Toby Sandoval",
-    "owner": "Hill Country Sports Group"
-  },
-  "facilities": {
-    "springTraining": {
-      "location": "Surprise, AZ",
-      "facility": "Lone Star Complex"
+    "stadium": {
+        "name": "Live Oak Park",
+        "capacity": 36000,
+        "opened": 2026,
+        "dimensions": {
+            "leftField": 334,
+            "centerField": 405,
+            "rightField": 326
+        },
+        "features": ["Bat Bridge", "Armadillo Hill"]
     },
-    "academy": "Central Texas Prospects Academy"
-  },
-  "fanbase": {
-    "nickname": "#DilloUp",
-    "attendance2024": 1184000,
-    "socialMedia": {
-      "twitter": "@atxdillos",
-      "instagram": "@atxdillos"
-    }
-  },
-  "createdAt": "2025-10-15T00:00:00.000Z"
+    "history": {
+        "championships": [],
+        "retiredNumbers": [],
+        "rivalries": ["Houston Astros", "Texas Rangers"]
+    },
+    "management": {
+        "generalManager": "Maya Castillo",
+        "manager": "Toby Sandoval",
+        "owner": "Hill Country Sports Group"
+    },
+    "facilities": {
+        "springTraining": {
+            "location": "Surprise, AZ",
+            "facility": "Lone Star Complex"
+        },
+        "academy": "Central Texas Prospects Academy"
+    },
+    "fanbase": {
+        "nickname": "#DilloUp",
+        "attendance2024": 1184000,
+        "socialMedia": {
+            "twitter": "@atxdillos",
+            "instagram": "@atxdillos"
+        }
+    },
+    "createdAt": "2025-10-15T00:00:00.000Z"
 }

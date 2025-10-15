@@ -1,54 +1,51 @@
 {
-  "teamId": 26,
-  "fullName": "Albuquerque Atoms",
-  "city": "Albuquerque",
-  "name": "Atoms",
-  "league": "National League",
-  "division": "West",
-  "founded": 2026,
-  "colors": {
-    "primary": "#F97316",
-    "secondary": "#EA580C",
-    "accent": "#FED7AA"
-  },
-  "stadium": {
-    "name": "Mesa Vista Park",
-    "capacity": 34000,
-    "opened": 2026,
-    "dimensions": {
-      "leftField": 336,
-      "centerField": 409,
-      "rightField": 332
+    "teamId": 26,
+    "fullName": "Albuquerque Atoms",
+    "city": "Albuquerque",
+    "name": "Atoms",
+    "league": "National League",
+    "division": "West",
+    "founded": 2026,
+    "colors": {
+        "primary": "#F97316",
+        "secondary": "#EA580C",
+        "accent": "#FED7AA"
     },
-    "features": [
-      "Balloon Fiesta Berm",
-      "Sandia Summit Seats"
-    ]
-  },
-  "history": {
-    "championships": [],
-    "retiredNumbers": [],
-    "rivalries": ["Colorado Rockies", "Arizona Diamondbacks"]
-  },
-  "management": {
-    "generalManager": "Emilio Vargas",
-    "manager": "Nate Holloway",
-    "owner": "High Desert Sports Club"
-  },
-  "facilities": {
-    "springTraining": {
-      "location": "Goodyear, AZ",
-      "facility": "Atom Spring Complex"
+    "stadium": {
+        "name": "Mesa Vista Park",
+        "capacity": 34000,
+        "opened": 2026,
+        "dimensions": {
+            "leftField": 336,
+            "centerField": 409,
+            "rightField": 332
+        },
+        "features": ["Balloon Fiesta Berm", "Sandia Summit Seats"]
     },
-    "academy": "New Mexico Prospects Academy"
-  },
-  "fanbase": {
-    "nickname": "#GoNuclear",
-    "attendance2024": 990000,
-    "socialMedia": {
-      "twitter": "@abqatoms",
-      "instagram": "@abqatoms"
-    }
-  },
-  "createdAt": "2025-10-15T00:00:00.000Z"
+    "history": {
+        "championships": [],
+        "retiredNumbers": [],
+        "rivalries": ["Colorado Rockies", "Arizona Diamondbacks"]
+    },
+    "management": {
+        "generalManager": "Emilio Vargas",
+        "manager": "Nate Holloway",
+        "owner": "High Desert Sports Club"
+    },
+    "facilities": {
+        "springTraining": {
+            "location": "Goodyear, AZ",
+            "facility": "Atom Spring Complex"
+        },
+        "academy": "New Mexico Prospects Academy"
+    },
+    "fanbase": {
+        "nickname": "#GoNuclear",
+        "attendance2024": 990000,
+        "socialMedia": {
+            "twitter": "@abqatoms",
+            "instagram": "@abqatoms"
+        }
+    },
+    "createdAt": "2025-10-15T00:00:00.000Z"
 }

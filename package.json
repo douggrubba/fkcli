@@ -11,6 +11,8 @@
         "dev:watch": "clear && nodemon src/index.js",
         "build": "echo 'No build needed for CommonJS'",
         "start": "clear && node src/index.js",
+        "db:seed": "node scripts/seed-teams.js",
+        "db:seed:reset": "node scripts/seed-teams.js --reset",
         "lint": "eslint . --ext .js,.jsx",
         "lint:fix": "eslint . --ext .js,.jsx --fix",
         "format": "prettier --write \"**/*.{js,jsx,json,md}\"",

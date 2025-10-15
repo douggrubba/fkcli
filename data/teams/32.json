@@ -1,54 +1,51 @@
 {
-  "teamId": 32,
-  "fullName": "San Bernardino Coyotes",
-  "city": "San Bernardino",
-  "name": "Coyotes",
-  "league": "National League",
-  "division": "West",
-  "founded": 2026,
-  "colors": {
-    "primary": "#92400E",
-    "secondary": "#22C55E",
-    "accent": "#FEF3C7"
-  },
-  "stadium": {
-    "name": "Mojave Edge Park",
-    "capacity": 34000,
-    "opened": 2026,
-    "dimensions": {
-      "leftField": 335,
-      "centerField": 409,
-      "rightField": 332
+    "teamId": 32,
+    "fullName": "San Bernardino Coyotes",
+    "city": "San Bernardino",
+    "name": "Coyotes",
+    "league": "National League",
+    "division": "West",
+    "founded": 2026,
+    "colors": {
+        "primary": "#92400E",
+        "secondary": "#22C55E",
+        "accent": "#FEF3C7"
     },
-    "features": [
-      "Desert Breeze Berm",
-      "Coyote Canyon Corner"
-    ]
-  },
-  "history": {
-    "championships": [],
-    "retiredNumbers": [],
-    "rivalries": ["Los Angeles Dodgers", "San Diego Padres", "Arizona Diamondbacks"]
-  },
-  "management": {
-    "generalManager": "Renee Bautista",
-    "manager": "Hector Solis",
-    "owner": "Inland Empire Sports Group"
-  },
-  "facilities": {
-    "springTraining": {
-      "location": "Tempe, AZ",
-      "facility": "Coyote Spring Complex"
+    "stadium": {
+        "name": "Mojave Edge Park",
+        "capacity": 34000,
+        "opened": 2026,
+        "dimensions": {
+            "leftField": 335,
+            "centerField": 409,
+            "rightField": 332
+        },
+        "features": ["Desert Breeze Berm", "Coyote Canyon Corner"]
     },
-    "academy": "Inland Empire Prospects Academy"
-  },
-  "fanbase": {
-    "nickname": "#HowlTogether",
-    "attendance2024": 930000,
-    "socialMedia": {
-      "twitter": "@sbcoyotes",
-      "instagram": "@sbcoyotes"
-    }
-  },
-  "createdAt": "2025-10-15T00:00:00.000Z"
+    "history": {
+        "championships": [],
+        "retiredNumbers": [],
+        "rivalries": ["Los Angeles Dodgers", "San Diego Padres", "Arizona Diamondbacks"]
+    },
+    "management": {
+        "generalManager": "Renee Bautista",
+        "manager": "Hector Solis",
+        "owner": "Inland Empire Sports Group"
+    },
+    "facilities": {
+        "springTraining": {
+            "location": "Tempe, AZ",
+            "facility": "Coyote Spring Complex"
+        },
+        "academy": "Inland Empire Prospects Academy"
+    },
+    "fanbase": {
+        "nickname": "#HowlTogether",
+        "attendance2024": 930000,
+        "socialMedia": {
+            "twitter": "@sbcoyotes",
+            "instagram": "@sbcoyotes"
+        }
+    },
+    "createdAt": "2025-10-15T00:00:00.000Z"
 }

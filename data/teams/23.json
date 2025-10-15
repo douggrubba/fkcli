@@ -1,54 +1,51 @@
 {
-  "teamId": 23,
-  "fullName": "Orlando Orbit",
-  "city": "Orlando",
-  "name": "Orbit",
-  "league": "American League",
-  "division": "East",
-  "founded": 2026,
-  "colors": {
-    "primary": "#0B132B",
-    "secondary": "#6FFFE9",
-    "accent": "#5BC0BE"
-  },
-  "stadium": {
-    "name": "Space Coast Park",
-    "capacity": 38500,
-    "opened": 2026,
-    "dimensions": {
-      "leftField": 334,
-      "centerField": 405,
-      "rightField": 326
+    "teamId": 23,
+    "fullName": "Orlando Orbit",
+    "city": "Orlando",
+    "name": "Orbit",
+    "league": "American League",
+    "division": "East",
+    "founded": 2026,
+    "colors": {
+        "primary": "#0B132B",
+        "secondary": "#6FFFE9",
+        "accent": "#5BC0BE"
     },
-    "features": [
-      "Rocket Row",
-      "Galaxy Gate"
-    ]
-  },
-  "history": {
-    "championships": [],
-    "retiredNumbers": [],
-    "rivalries": ["Tampa Bay Rays", "Miami Marlins"]
-  },
-  "management": {
-    "generalManager": "Noah Patel",
-    "manager": "Santiago Rivas",
-    "owner": "Sunshine State Sports Group"
-  },
-  "facilities": {
-    "springTraining": {
-      "location": "Kissimmee, FL",
-      "facility": "Orbit Complex"
+    "stadium": {
+        "name": "Space Coast Park",
+        "capacity": 38500,
+        "opened": 2026,
+        "dimensions": {
+            "leftField": 334,
+            "centerField": 405,
+            "rightField": 326
+        },
+        "features": ["Rocket Row", "Galaxy Gate"]
     },
-    "academy": "Florida Space Coast Academy"
-  },
-  "fanbase": {
-    "nickname": "#IntoOrbit",
-    "attendance2024": 1384000,
-    "socialMedia": {
-      "twitter": "@orlorbit",
-      "instagram": "@orlorbit"
-    }
-  },
-  "createdAt": "2025-10-15T00:00:00.000Z"
+    "history": {
+        "championships": [],
+        "retiredNumbers": [],
+        "rivalries": ["Tampa Bay Rays", "Miami Marlins"]
+    },
+    "management": {
+        "generalManager": "Noah Patel",
+        "manager": "Santiago Rivas",
+        "owner": "Sunshine State Sports Group"
+    },
+    "facilities": {
+        "springTraining": {
+            "location": "Kissimmee, FL",
+            "facility": "Orbit Complex"
+        },
+        "academy": "Florida Space Coast Academy"
+    },
+    "fanbase": {
+        "nickname": "#IntoOrbit",
+        "attendance2024": 1384000,
+        "socialMedia": {
+            "twitter": "@orlorbit",
+            "instagram": "@orlorbit"
+        }
+    },
+    "createdAt": "2025-10-15T00:00:00.000Z"
 }
