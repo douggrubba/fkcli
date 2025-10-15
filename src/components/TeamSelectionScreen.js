@@ -1,30 +1,26 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useMemo } from "react";
 import { Text, Box, useInput } from "ink";
-import { t } from "../lang/index.js";
 import { getGameData } from "../data/index.js";
 
 const TeamSelectionScreen = ({ onTeamSelect, onBack }) => {
-    const [teams, setTeams] = useState([]);
-    const [selectedIndex, setSelectedIndex] = useState(0);
-    const [selectedTeamData, setSelectedTeamData] = useState(null);
-
-    useEffect(() => {
+    const teams = useMemo(() => {
         const db = getGameData();
         const standings = db.getStandings();
         // Sort teams alphabetically by city for consistent selection
-        const sortedTeams = standings.sort((a, b) =>
+        return [...standings].sort((a, b) =>
             `${a.city} ${a.name}`.localeCompare(`${b.city} ${b.name}`)
         );
-        setTeams(sortedTeams);
     }, []);
+    const [selectedIndex, setSelectedIndex] = useState(0);
+    // Visible rows for the team list to prevent layout from jumping
+    const MAX_LIST_ROWS = 16;
 
-    // Load detailed data for the currently selected team
-    useEffect(() => {
+    // Load detailed data for the currently selected team (derived)
+    const selectedTeamData = useMemo(() => {
         if (teams.length > 0 && teams[selectedIndex]) {
             const db = getGameData();
             const teamData = db.getCompleteTeamData(teams[selectedIndex].id);
-            // Merge the basic team data with the complete data for league/division info
-            const enhancedData = {
+            return {
                 ...teamData,
                 record: {
                     ...teamData.record,
@@ -32,8 +28,8 @@ const TeamSelectionScreen = ({ onTeamSelect, onBack }) => {
                     division: teams[selectedIndex].division
                 }
             };
-            setSelectedTeamData(enhancedData);
         }
+        return null;
     }, [selectedIndex, teams]);
 
     useInput((input, key) => {
@@ -72,7 +68,6 @@ const TeamSelectionScreen = ({ onTeamSelect, onBack }) => {
 
         const { record, profile } = selectedTeamData;
         const winPct = record.win_percentage ? (record.win_percentage * 100).toFixed(1) : "0.0";
-        const gamesPlayed = (record.wins || 0) + (record.losses || 0);
 
         const logoElement = React.createElement(
             Text,
@@ -83,6 +78,17 @@ const TeamSelectionScreen = ({ onTeamSelect, onBack }) => {
             },
             teams[selectedIndex]?.emoji || "⚾"
         );
+
+        // Prepare consistent details to avoid layout jumping between selections
+        const champs = Array.isArray(profile?.history?.championships)
+            ? profile.history.championships
+            : [];
+        const latestChamp = champs.length > 0 ? Math.max(...champs) : "—";
+        const stadium = profile?.stadium || {};
+        const dims = stadium?.dimensions || {};
+        const features = Array.isArray(stadium?.features) ? stadium.features.slice(0, 3) : [];
+        const paddedFeatures = [...features];
+        while (paddedFeatures.length < 3) paddedFeatures.push("");
 
         return React.createElement(
             Box,
@@ -119,114 +125,85 @@ const TeamSelectionScreen = ({ onTeamSelect, onBack }) => {
 
                 React.createElement(
                     Text,
-                    {
-                        key: "league-division",
-                        color: "gray"
-                    },
-                    `${record.league || "Unknown"} League, ${record.division || "Unknown"} Division`
+                    { key: "league-division", color: "gray" },
+                    `${record.league || "Unknown"} • ${record.division || "Unknown"}`
                 ),
 
                 React.createElement(Box, { key: "detail-spacer2", height: 1 }),
 
-                profile?.stadium &&
-                    React.createElement(
-                        Text,
-                        {
-                            key: "stadium",
-                            color: "green"
-                        },
-                        `🏟️  ${profile.stadium.name}`
-                    ),
+                React.createElement(
+                    Text,
+                    { key: "stadium", color: "green" },
+                    `🏟️  ${stadium?.name || "Unknown Stadium"}`
+                ),
 
-                profile?.stadium &&
-                    React.createElement(
-                        Text,
-                        {
-                            key: "stadium-details",
-                            color: "gray"
-                        },
-                        `   Capacity: ${profile.stadium.capacity?.toLocaleString()} • Opened: ${profile.stadium.opened}`
-                    ),
+                React.createElement(
+                    Text,
+                    { key: "stadium-details", color: "gray" },
+                    `   Capacity: ${stadium?.capacity?.toLocaleString?.() || "—"} • Opened: ${stadium?.opened || "—"}`
+                ),
 
-                profile?.stadium?.dimensions &&
-                    React.createElement(
-                        Text,
-                        {
-                            key: "dimensions",
-                            color: "gray"
-                        },
-                        `   Dimensions: ${profile.stadium.dimensions.leftField}' - ${profile.stadium.dimensions.centerField}' - ${profile.stadium.dimensions.rightField}'`
-                    ),
+                React.createElement(
+                    Text,
+                    { key: "dimensions", color: "gray" },
+                    `   Dimensions: ${dims.leftField || "—"}' - ${dims.centerField || "—"}' - ${dims.rightField || "—"}'`
+                ),
 
                 React.createElement(Box, { key: "detail-spacer3", height: 1 }),
 
-                profile?.history?.championships &&
-                    React.createElement(
-                        Text,
-                        {
-                            key: "championships",
-                            color: "yellow"
-                        },
-                        `🏆 Championships: ${profile.history.championships.length} (Latest: ${Math.max(...profile.history.championships)})`
-                    ),
+                React.createElement(
+                    Text,
+                    { key: "championships", color: "yellow" },
+                    `🏆 Championships: ${champs.length} (Latest: ${latestChamp})`
+                ),
 
-                profile?.founded &&
-                    React.createElement(
-                        Text,
-                        {
-                            key: "founded",
-                            color: "gray"
-                        },
-                        `📅 Founded: ${profile.founded}`
-                    ),
+                React.createElement(
+                    Text,
+                    { key: "founded", color: "gray" },
+                    `📅 Founded: ${profile?.founded || "—"}`
+                ),
 
                 React.createElement(Box, { key: "detail-spacer4", height: 1 }),
 
-                profile?.management &&
-                    React.createElement(
-                        Text,
-                        {
-                            key: "manager",
-                            color: "white"
-                        },
-                        `👔 Manager: ${profile.management.manager}`
-                    ),
+                React.createElement(
+                    Text,
+                    { key: "manager", color: "white" },
+                    `👔 Manager: ${profile?.management?.manager || "—"}`
+                ),
 
-                profile?.management &&
-                    React.createElement(
-                        Text,
-                        {
-                            key: "gm",
-                            color: "gray"
-                        },
-                        `   GM: ${profile.management.generalManager}`
-                    ),
+                React.createElement(
+                    Text,
+                    { key: "gm", color: "gray" },
+                    `   GM: ${profile?.management?.generalManager || "—"}`
+                ),
 
                 React.createElement(Box, { key: "detail-spacer5", height: 1 }),
 
-                profile?.stadium?.features &&
-                    React.createElement(
-                        Text,
-                        {
-                            key: "features-title",
-                            color: "cyan"
-                        },
-                        "Notable Features:"
-                    ),
+                React.createElement(
+                    Text,
+                    { key: "features-title", color: "cyan" },
+                    "Notable Features:"
+                ),
 
-                ...(profile?.stadium?.features || []).slice(0, 3).map((feature, index) =>
+                ...paddedFeatures.map((feature, index) =>
                     React.createElement(
                         Text,
-                        {
-                            key: `feature-${index}`,
-                            color: "gray"
-                        },
+                        { key: `feature-${index}`, color: "gray" },
                         `   • ${feature}`
                     )
                 )
             ]
         );
     };
+
+    // Compute scroll window for the team list
+    const total = teams.length;
+    const visible = Math.min(total, MAX_LIST_ROWS);
+    const half = Math.floor(visible / 2);
+    const start = Math.max(0, Math.min(selectedIndex - half, total - visible));
+    const end = Math.min(start + visible, total);
+    const hasAbove = start > 0;
+    const hasBelow = end < total;
 
     return React.createElement(
         Box,
@@ -242,7 +219,7 @@ const TeamSelectionScreen = ({ onTeamSelect, onBack }) => {
                 {
                     key: "team-list",
                     flexDirection: "column",
-                    width: "50%",
+                    flexGrow: 1,
                     paddingRight: 2
                 },
                 [
@@ -269,22 +246,29 @@ const TeamSelectionScreen = ({ onTeamSelect, onBack }) => {
 
                     React.createElement(Box, { key: "spacer2", height: 1 }),
 
-                    ...teams.map((team, index) => {
+                    hasAbove &&
+                        React.createElement(Text, { key: "more-above", color: "gray" }, "  ↑ more"),
+
+                    ...teams.slice(start, end).map((team, i) => {
+                        const index = start + i;
                         const isSelected = index === selectedIndex;
                         const teamName = `${team.city} ${team.name}`;
                         const emoji = team.emoji || "⚾";
-
                         return React.createElement(
                             Text,
                             {
                                 key: team.id,
                                 color: isSelected ? "black" : "white",
                                 backgroundColor: isSelected ? "cyan" : undefined,
-                                bold: isSelected
+                                bold: isSelected,
+                                wrap: "truncate"
                             },
                             ` ${isSelected ? "►" : " "} ${emoji} ${teamName}`
                         );
                     }),
+
+                    hasBelow &&
+                        React.createElement(Text, { key: "more-below", color: "gray" }, "  ↓ more"),
 
                     React.createElement(Box, { key: "spacer3", height: 2 }),
 
@@ -305,7 +289,7 @@ const TeamSelectionScreen = ({ onTeamSelect, onBack }) => {
                 {
                     key: "team-details-container",
                     flexDirection: "column",
-                    width: "50%",
+                    flexGrow: 1,
                     paddingLeft: 1
                 },
                 [renderTeamDetails()]
