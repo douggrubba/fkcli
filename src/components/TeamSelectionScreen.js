@@ -6,13 +6,13 @@ const TeamSelectionScreen = ({ onTeamSelect, onBack }) => {
     const teams = useMemo(() => {
         const db = getGameData();
         const standings = db.getStandings();
-        // Sort teams alphabetically by city for consistent selection
+
         return [...standings].sort((a, b) =>
             `${a.city} ${a.name}`.localeCompare(`${b.city} ${b.name}`)
         );
     }, []);
+
     const [selectedIndex, setSelectedIndex] = useState(0);
-    // Visible rows for the team list to prevent layout from jumping
     const MAX_LIST_ROWS = 16;
 
     // Load detailed data for the currently selected team (derived)
@@ -246,29 +246,16 @@ const TeamSelectionScreen = ({ onTeamSelect, onBack }) => {
 
                     React.createElement(Box, { key: "spacer2", height: 1 }),
 
-                    hasAbove &&
-                        React.createElement(Text, { key: "more-above", color: "gray" }, "  ↑ more"),
+                    // isSelected - for the team that is currently highlighted
+                    // teams
+                    // team.city team.name team.emoji
 
-                    ...teams.slice(start, end).map((team, i) => {
-                        const index = start + i;
-                        const isSelected = index === selectedIndex;
-                        const teamName = `${team.city} ${team.name}`;
-                        const emoji = team.emoji || "⚾";
-                        return React.createElement(
-                            Text,
-                            {
-                                key: team.id,
-                                color: isSelected ? "black" : "white",
-                                backgroundColor: isSelected ? "cyan" : undefined,
-                                bold: isSelected,
-                                wrap: "truncate"
-                            },
-                            ` ${isSelected ? "►" : " "} ${emoji} ${teamName}`
-                        );
-                    }),
-
-                    hasBelow &&
-                        React.createElement(Text, { key: "more-below", color: "gray" }, "  ↓ more"),
+                    // might not be needed but hasBelow && hasAbove
+                    React.createElement(
+                        Text,
+                        { key: "selectedTeam", color: "cyan" },
+                        teams[selectedIndex]?.name
+                    ),
 
                     React.createElement(Box, { key: "spacer3", height: 2 }),
 
