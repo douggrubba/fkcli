@@ -1,0 +1,51 @@
+{
+    "teamId": 10,
+    "fullName": "Indianapolis Racers",
+    "city": "Indianapolis",
+    "name": "Racers",
+    "league": "American League",
+    "division": "Central",
+    "founded": 2025,
+    "colors": {
+        "primary": "#1E3A8A",
+        "secondary": "#F59E0B",
+        "accent": "#F3F4F6"
+    },
+    "stadium": {
+        "name": "Speedway Field",
+        "capacity": 36500,
+        "opened": 2025,
+        "dimensions": {
+            "leftField": 333,
+            "centerField": 403,
+            "rightField": 330
+        },
+        "features": ["Pagoda Pavilion", "Brickyard Basepath"]
+    },
+    "history": {
+        "championships": [],
+        "retiredNumbers": [],
+        "rivalries": ["Chicago White Sox", "Detroit Tigers", "Cleveland Guardians"]
+    },
+    "management": {
+        "generalManager": "Shawn Mercer",
+        "manager": "Rafael Kim",
+        "owner": "Circle City Baseball Group"
+    },
+    "facilities": {
+        "springTraining": {
+            "location": "Sarasota, FL",
+            "facility": "Hoosier Spring Complex"
+        },
+        "academy": "Midwest Elite Academy"
+    },
+    "fanbase": {
+        "nickname": "#FullThrottle",
+        "attendance2024": 1320000,
+        "socialMedia": {
+            "twitter": "@indyracers",
+            "instagram": "@indyracers"
+        }
+    },
+    "createdAt": "2025-10-15T00:00:00.000Z"
+}

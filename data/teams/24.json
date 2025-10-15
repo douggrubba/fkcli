@@ -1,0 +1,54 @@
+{
+  "teamId": 24,
+  "fullName": "Birmingham Hammers",
+  "city": "Birmingham",
+  "name": "Hammers",
+  "league": "National League",
+  "division": "Central",
+  "founded": 2025,
+  "colors": {
+    "primary": "#111827",
+    "secondary": "#9CA3AF",
+    "accent": "#F59E0B"
+  },
+  "stadium": {
+    "name": "Iron City Yard",
+    "capacity": 35500,
+    "opened": 2025,
+    "dimensions": {
+      "leftField": 332,
+      "centerField": 403,
+      "rightField": 329
+    },
+    "features": [
+      "Sloss Stack",
+      "Railroad Row"
+    ]
+  },
+  "history": {
+    "championships": [],
+    "retiredNumbers": [],
+    "rivalries": ["Atlanta Braves", "St. Louis Cardinals"]
+  },
+  "management": {
+    "generalManager": "Andre Whitaker",
+    "manager": "Casey Nguyen",
+    "owner": "Magic City Sports Group"
+  },
+  "facilities": {
+    "springTraining": {
+      "location": "Port Charlotte, FL",
+      "facility": "Hammer Spring Complex"
+    },
+    "academy": "Alabama Prospects Academy"
+  },
+  "fanbase": {
+    "nickname": "#HammerTime",
+    "attendance2024": 1018000,
+    "socialMedia": {
+      "twitter": "@bhmhammers",
+      "instagram": "@bhmhammers"
+    }
+  },
+  "createdAt": "2025-10-15T00:00:00.000Z"
+}

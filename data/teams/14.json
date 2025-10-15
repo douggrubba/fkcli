@@ -1,0 +1,51 @@
+{
+    "teamId": 14,
+    "fullName": "Hartford Forge",
+    "city": "Hartford",
+    "name": "Forge",
+    "league": "American League",
+    "division": "East",
+    "founded": 2025,
+    "colors": {
+        "primary": "#263238",
+        "secondary": "#FF6F00",
+        "accent": "#CFD8DC"
+    },
+    "stadium": {
+        "name": "Foundry Field",
+        "capacity": 34000,
+        "opened": 2025,
+        "dimensions": {
+            "leftField": 332,
+            "centerField": 402,
+            "rightField": 330
+        },
+        "features": ["Brass Bonanza Bandstand", "Charter Oak Grove"]
+    },
+    "history": {
+        "championships": [],
+        "retiredNumbers": [],
+        "rivalries": ["Boston Red Sox", "New York Yankees"]
+    },
+    "management": {
+        "generalManager": "Trevor McNally",
+        "manager": "Owen Fitzgerald",
+        "owner": "Charter State Sports"
+    },
+    "facilities": {
+        "springTraining": {
+            "location": "Clearwater, FL",
+            "facility": "Forge Spring Grounds"
+        },
+        "academy": "New England Prospects Academy"
+    },
+    "fanbase": {
+        "nickname": "#FeelTheHeat",
+        "attendance2024": 1042000,
+        "socialMedia": {
+            "twitter": "@hartfordforge",
+            "instagram": "@hartfordforge"
+        }
+    },
+    "createdAt": "2025-10-15T00:00:00.000Z"
+}

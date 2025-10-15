@@ -1,0 +1,51 @@
+{
+    "teamId": 6,
+    "fullName": "Vancouver Voyagers",
+    "city": "Vancouver",
+    "name": "Voyagers",
+    "league": "American League",
+    "division": "West",
+    "founded": 2026,
+    "colors": {
+        "primary": "#0D47A1",
+        "secondary": "#00ACC1",
+        "accent": "#BBDEFB"
+    },
+    "stadium": {
+        "name": "Pacific Passage Park",
+        "capacity": 39000,
+        "opened": 2026,
+        "dimensions": {
+            "leftField": 336,
+            "centerField": 408,
+            "rightField": 334
+        },
+        "features": ["Harbor Bridge Lookout", "Rainforest Roof"]
+    },
+    "history": {
+        "championships": [],
+        "retiredNumbers": [],
+        "rivalries": ["Seattle Mariners"]
+    },
+    "management": {
+        "generalManager": "Sofia Nguyen",
+        "manager": "Ethan Park",
+        "owner": "Cascadia Sports Group"
+    },
+    "facilities": {
+        "springTraining": {
+            "location": "Scottsdale, AZ",
+            "facility": "Voyager Complex"
+        },
+        "academy": "BC Prospects Academy"
+    },
+    "fanbase": {
+        "nickname": "#SetSail",
+        "attendance2024": 1215000,
+        "socialMedia": {
+            "twitter": "@vanvoyagers",
+            "instagram": "@vanvoyagers"
+        }
+    },
+    "createdAt": "2025-10-15T00:00:00.000Z"
+}

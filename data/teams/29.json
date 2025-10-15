@@ -1,0 +1,54 @@
+{
+  "teamId": 29,
+  "fullName": "Anchorage Northern Lights",
+  "city": "Anchorage",
+  "name": "Northern Lights",
+  "league": "American League",
+  "division": "West",
+  "founded": 2026,
+  "colors": {
+    "primary": "#0EA5E9",
+    "secondary": "#22D3EE",
+    "accent": "#A7F3D0"
+  },
+  "stadium": {
+    "name": "Aurora Field",
+    "capacity": 33000,
+    "opened": 2026,
+    "dimensions": {
+      "leftField": 336,
+      "centerField": 408,
+      "rightField": 333
+    },
+    "features": [
+      "Glacier Gate",
+      "Aurora Deck"
+    ]
+  },
+  "history": {
+    "championships": [],
+    "retiredNumbers": [],
+    "rivalries": ["Seattle Mariners", "Vancouver Voyagers"]
+  },
+  "management": {
+    "generalManager": "Yelena Sokolov",
+    "manager": "Kai Nakamura",
+    "owner": "Frontier Sports Group"
+  },
+  "facilities": {
+    "springTraining": {
+      "location": "Tempe, AZ",
+      "facility": "Northern Lights Complex"
+    },
+    "academy": "Alaska Prospects Academy"
+  },
+  "fanbase": {
+    "nickname": "#ShineBright",
+    "attendance2024": 870000,
+    "socialMedia": {
+      "twitter": "@aklights",
+      "instagram": "@aklights"
+    }
+  },
+  "createdAt": "2025-10-15T00:00:00.000Z"
+}

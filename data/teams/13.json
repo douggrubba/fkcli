@@ -1,0 +1,51 @@
+{
+    "teamId": 13,
+    "fullName": "San Antonio Vaqueros",
+    "city": "San Antonio",
+    "name": "Vaqueros",
+    "league": "American League",
+    "division": "West",
+    "founded": 2026,
+    "colors": {
+        "primary": "#8B4513",
+        "secondary": "#FFD700",
+        "accent": "#F8F1E1"
+    },
+    "stadium": {
+        "name": "Mission Trail Park",
+        "capacity": 37000,
+        "opened": 2026,
+        "dimensions": {
+            "leftField": 337,
+            "centerField": 408,
+            "rightField": 330
+        },
+        "features": ["Alamo Arch", "River Walk Bullpen"]
+    },
+    "history": {
+        "championships": [],
+        "retiredNumbers": [],
+        "rivalries": ["Texas Rangers", "Houston Astros"]
+    },
+    "management": {
+        "generalManager": "Elena Suarez",
+        "manager": "Pedro Valdez",
+        "owner": "Alamo City Sports Group"
+    },
+    "facilities": {
+        "springTraining": {
+            "location": "Surprise, AZ",
+            "facility": "Vaquero Complex"
+        },
+        "academy": "Texas Hill Country Academy"
+    },
+    "fanbase": {
+        "nickname": "#RideOn",
+        "attendance2024": 1254000,
+        "socialMedia": {
+            "twitter": "@savqrs",
+            "instagram": "@savqrs"
+        }
+    },
+    "createdAt": "2025-10-15T00:00:00.000Z"
+}

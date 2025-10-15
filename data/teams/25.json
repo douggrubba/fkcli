@@ -1,0 +1,54 @@
+{
+  "teamId": 25,
+  "fullName": "Raleigh Oaks",
+  "city": "Raleigh",
+  "name": "Oaks",
+  "league": "American League",
+  "division": "East",
+  "founded": 2026,
+  "colors": {
+    "primary": "#065F46",
+    "secondary": "#059669",
+    "accent": "#D1FAE5"
+  },
+  "stadium": {
+    "name": "Oak Grove Park",
+    "capacity": 35000,
+    "opened": 2026,
+    "dimensions": {
+      "leftField": 335,
+      "centerField": 405,
+      "rightField": 329
+    },
+    "features": [
+      "Acorn Arch",
+      "Neuse River Porch"
+    ]
+  },
+  "history": {
+    "championships": [],
+    "retiredNumbers": [],
+    "rivalries": ["Baltimore Orioles", "Washington Nationals"]
+  },
+  "management": {
+    "generalManager": "Parker Ellis",
+    "manager": "Victor Salazar",
+    "owner": "Triangle Sports Group"
+  },
+  "facilities": {
+    "springTraining": {
+      "location": "Jupiter, FL",
+      "facility": "Oak Spring Grounds"
+    },
+    "academy": "Carolina Prospects Academy"
+  },
+  "fanbase": {
+    "nickname": "#RootedStrong",
+    "attendance2024": 1067000,
+    "socialMedia": {
+      "twitter": "@raleighoaks",
+      "instagram": "@raleighoaks"
+    }
+  },
+  "createdAt": "2025-10-15T00:00:00.000Z"
+}

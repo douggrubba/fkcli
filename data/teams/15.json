@@ -1,0 +1,51 @@
+{
+    "teamId": 15,
+    "fullName": "Oklahoma City Tornadoes",
+    "city": "Oklahoma City",
+    "name": "Tornadoes",
+    "league": "National League",
+    "division": "Central",
+    "founded": 2025,
+    "colors": {
+        "primary": "#374151",
+        "secondary": "#10B981",
+        "accent": "#93C5FD"
+    },
+    "stadium": {
+        "name": "Prairie Spiral Park",
+        "capacity": 36000,
+        "opened": 2025,
+        "dimensions": {
+            "leftField": 334,
+            "centerField": 404,
+            "rightField": 329
+        },
+        "features": ["Twister Tower", "Storm Cell Seats"]
+    },
+    "history": {
+        "championships": [],
+        "retiredNumbers": [],
+        "rivalries": ["Kansas City Royals", "Texas Rangers", "St. Louis Cardinals"]
+    },
+    "management": {
+        "generalManager": "Nina Caldwell",
+        "manager": "Elliot Monroe",
+        "owner": "Red Dirt Sports Group"
+    },
+    "facilities": {
+        "springTraining": {
+            "location": "Goodyear, AZ",
+            "facility": "Plains Spring Complex"
+        },
+        "academy": "Oklahoma Baseball Institute"
+    },
+    "fanbase": {
+        "nickname": "#SpinToWin",
+        "attendance2024": 1150000,
+        "socialMedia": {
+            "twitter": "@okctornadoes",
+            "instagram": "@okctornadoes"
+        }
+    },
+    "createdAt": "2025-10-15T00:00:00.000Z"
+}

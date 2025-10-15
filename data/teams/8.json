@@ -1,0 +1,51 @@
+{
+    "teamId": 8,
+    "fullName": "Montreal Miners",
+    "city": "Montreal",
+    "name": "Miners",
+    "league": "American League",
+    "division": "East",
+    "founded": 2026,
+    "colors": {
+        "primary": "#112B3C",
+        "secondary": "#F66B0E",
+        "accent": "#C5D8D1"
+    },
+    "stadium": {
+        "name": "St. Lawrence Yard",
+        "capacity": 37250,
+        "opened": 2026,
+        "dimensions": {
+            "leftField": 334,
+            "centerField": 406,
+            "rightField": 328
+        },
+        "features": ["Mount Royal Terrace", "Old Port Promenade"]
+    },
+    "history": {
+        "championships": [],
+        "retiredNumbers": [],
+        "rivalries": ["Toronto Blue Jays", "Boston Red Sox"]
+    },
+    "management": {
+        "generalManager": "Luc Tremblay",
+        "manager": "Étienne Rousseau",
+        "owner": "Nord Sports Group"
+    },
+    "facilities": {
+        "springTraining": {
+            "location": "Dunedin, FL",
+            "facility": "Maple Leaf Complex"
+        },
+        "academy": "Québec Baseball Institute"
+    },
+    "fanbase": {
+        "nickname": "#AllezMiners",
+        "attendance2024": 1450000,
+        "socialMedia": {
+            "twitter": "@mtlminers",
+            "instagram": "@mtlminers"
+        }
+    },
+    "createdAt": "2025-10-15T00:00:00.000Z"
+}

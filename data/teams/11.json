@@ -1,0 +1,51 @@
+{
+    "teamId": 11,
+    "fullName": "New Orleans Crescents",
+    "city": "New Orleans",
+    "name": "Crescents",
+    "league": "National League",
+    "division": "Central",
+    "founded": 2025,
+    "colors": {
+        "primary": "#6B21A8",
+        "secondary": "#D97706",
+        "accent": "#0F172A"
+    },
+    "stadium": {
+        "name": "Crescent City Park",
+        "capacity": 38000,
+        "opened": 2025,
+        "dimensions": {
+            "leftField": 330,
+            "centerField": 405,
+            "rightField": 326
+        },
+        "features": ["Beignet Balcony", "Bayou Berm"]
+    },
+    "history": {
+        "championships": [],
+        "retiredNumbers": [],
+        "rivalries": ["Atlanta Braves", "Houston Astros"]
+    },
+    "management": {
+        "generalManager": "Adrienne Batiste",
+        "manager": "Louis Navarro",
+        "owner": "Gulf Coast Sports Group"
+    },
+    "facilities": {
+        "springTraining": {
+            "location": "Kissimmee, FL",
+            "facility": "Bayou Spring Complex"
+        },
+        "academy": "Louisiana Baseball Institute"
+    },
+    "fanbase": {
+        "nickname": "#LetTheGoodTimesRoll",
+        "attendance2024": 1205000,
+        "socialMedia": {
+            "twitter": "@nocrescents",
+            "instagram": "@nocrescents"
+        }
+    },
+    "createdAt": "2025-10-15T00:00:00.000Z"
+}

@@ -1,0 +1,51 @@
+{
+    "teamId": 5,
+    "fullName": "Charlotte Crown",
+    "city": "Charlotte",
+    "name": "Crown",
+    "league": "National League",
+    "division": "East",
+    "founded": 2026,
+    "colors": {
+        "primary": "#00BCD4",
+        "secondary": "#303F9F",
+        "accent": "#B2EBF2"
+    },
+    "stadium": {
+        "name": "Queen City Park",
+        "capacity": 37200,
+        "opened": 2026,
+        "dimensions": {
+            "leftField": 332,
+            "centerField": 405,
+            "rightField": 325
+        },
+        "features": ["Crown Gate", "Blue Line Bullpen"]
+    },
+    "history": {
+        "championships": [],
+        "retiredNumbers": [],
+        "rivalries": ["Atlanta Braves", "Washington Nationals"]
+    },
+    "management": {
+        "generalManager": "Jordan Avery",
+        "manager": "Kenji Matsuda",
+        "owner": "Carolina Ball Club"
+    },
+    "facilities": {
+        "springTraining": {
+            "location": "Fort Myers, FL",
+            "facility": "Royal Palms Complex"
+        },
+        "academy": "Carolinas Elite Academy"
+    },
+    "fanbase": {
+        "nickname": "#WearTheCrown",
+        "attendance2024": 1168000,
+        "socialMedia": {
+            "twitter": "@cltcrown",
+            "instagram": "@cltcrown"
+        }
+    },
+    "createdAt": "2025-10-15T00:00:00.000Z"
+}

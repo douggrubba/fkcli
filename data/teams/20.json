@@ -1,0 +1,54 @@
+{
+  "teamId": 20,
+  "fullName": "Sacramento Capitals",
+  "city": "Sacramento",
+  "name": "Capitals",
+  "league": "National League",
+  "division": "West",
+  "founded": 2026,
+  "colors": {
+    "primary": "#8B5CF6",
+    "secondary": "#10B981",
+    "accent": "#FDE68A"
+  },
+  "stadium": {
+    "name": "Capitol Mall Park",
+    "capacity": 38000,
+    "opened": 2026,
+    "dimensions": {
+      "leftField": 336,
+      "centerField": 408,
+      "rightField": 333
+    },
+    "features": [
+      "Tower Bridge Terrace",
+      "River Delta Deck"
+    ]
+  },
+  "history": {
+    "championships": [],
+    "retiredNumbers": [],
+    "rivalries": ["San Francisco Giants", "Oakland Athletics"]
+  },
+  "management": {
+    "generalManager": "Priya Kapoor",
+    "manager": "Luis Aranda",
+    "owner": "Capitol City Sports Group"
+  },
+  "facilities": {
+    "springTraining": {
+      "location": "Scottsdale, AZ",
+      "facility": "Golden State Complex"
+    },
+    "academy": "Central Valley Prospects Academy"
+  },
+  "fanbase": {
+    "nickname": "#CapCity",
+    "attendance2024": 1267000,
+    "socialMedia": {
+      "twitter": "@saccaps",
+      "instagram": "@saccaps"
+    }
+  },
+  "createdAt": "2025-10-15T00:00:00.000Z"
+}

@@ -1,0 +1,51 @@
+{
+    "teamId": 16,
+    "fullName": "Boise Mountaineers",
+    "city": "Boise",
+    "name": "Mountaineers",
+    "league": "National League",
+    "division": "West",
+    "founded": 2026,
+    "colors": {
+        "primary": "#2C5282",
+        "secondary": "#38A169",
+        "accent": "#F6E05E"
+    },
+    "stadium": {
+        "name": "Sawtooth Summit Stadium",
+        "capacity": 33000,
+        "opened": 2026,
+        "dimensions": {
+            "leftField": 333,
+            "centerField": 405,
+            "rightField": 331
+        },
+        "features": ["Summit Steps", "Pine Ridge Porch"]
+    },
+    "history": {
+        "championships": [],
+        "retiredNumbers": [],
+        "rivalries": ["Seattle Mariners", "Colorado Rockies"]
+    },
+    "management": {
+        "generalManager": "Wyatt Morgan",
+        "manager": "Aiko Tanaka",
+        "owner": "Gem State Sports Club"
+    },
+    "facilities": {
+        "springTraining": {
+            "location": "Glendale, AZ",
+            "facility": "Sawtooth Spring Grounds"
+        },
+        "academy": "Idaho Prospects Academy"
+    },
+    "fanbase": {
+        "nickname": "#ClimbHigh",
+        "attendance2024": 980000,
+        "socialMedia": {
+            "twitter": "@boisemnts",
+            "instagram": "@boisemnts"
+        }
+    },
+    "createdAt": "2025-10-15T00:00:00.000Z"
+}

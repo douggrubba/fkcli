@@ -1,0 +1,54 @@
+{
+  "teamId": 30,
+  "fullName": "Omaha Pioneers",
+  "city": "Omaha",
+  "name": "Pioneers",
+  "league": "National League",
+  "division": "Central",
+  "founded": 2025,
+  "colors": {
+    "primary": "#2563EB",
+    "secondary": "#10B981",
+    "accent": "#F3F4F6"
+  },
+  "stadium": {
+    "name": "Lewis & Clark Yard",
+    "capacity": 35000,
+    "opened": 2025,
+    "dimensions": {
+      "leftField": 333,
+      "centerField": 404,
+      "rightField": 329
+    },
+    "features": [
+      "Pioneer Plaza",
+      "Riverbank Porch"
+    ]
+  },
+  "history": {
+    "championships": [],
+    "retiredNumbers": [],
+    "rivalries": ["St. Louis Cardinals", "Kansas City Royals"]
+  },
+  "management": {
+    "generalManager": "Zara Whitman",
+    "manager": "Colton Reyes",
+    "owner": "Heartland Sports Group"
+  },
+  "facilities": {
+    "springTraining": {
+      "location": "Sarasota, FL",
+      "facility": "Pioneer Spring Grounds"
+    },
+    "academy": "Great Plains Prospects Academy"
+  },
+  "fanbase": {
+    "nickname": "#KeepPioneering",
+    "attendance2024": 1002000,
+    "socialMedia": {
+      "twitter": "@omahapioneers",
+      "instagram": "@omahapioneers"
+    }
+  },
+  "createdAt": "2025-10-15T00:00:00.000Z"
+}

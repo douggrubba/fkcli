@@ -1,0 +1,54 @@
+{
+  "teamId": 21,
+  "fullName": "San Jose Sparks",
+  "city": "San Jose",
+  "name": "Sparks",
+  "league": "American League",
+  "division": "West",
+  "founded": 2026,
+  "colors": {
+    "primary": "#F59E0B",
+    "secondary": "#111827",
+    "accent": "#FFE4B5"
+  },
+  "stadium": {
+    "name": "Silicon Valley Stadium",
+    "capacity": 37500,
+    "opened": 2026,
+    "dimensions": {
+      "leftField": 333,
+      "centerField": 404,
+      "rightField": 327
+    },
+    "features": [
+      "Innovation Plaza",
+      "Tech Terrace"
+    ]
+  },
+  "history": {
+    "championships": [],
+    "retiredNumbers": [],
+    "rivalries": ["Oakland Athletics", "San Francisco Giants"]
+  },
+  "management": {
+    "generalManager": "Isabella Choi",
+    "manager": "Ken Park",
+    "owner": "Bay Silicon Sports LLC"
+  },
+  "facilities": {
+    "springTraining": {
+      "location": "Mesa, AZ",
+      "facility": "Spark Labs Complex"
+    },
+    "academy": "South Bay Baseball Institute"
+  },
+  "fanbase": {
+    "nickname": "#IgniteSJ",
+    "attendance2024": 1302000,
+    "socialMedia": {
+      "twitter": "@sjsparks",
+      "instagram": "@sjsparks"
+    }
+  },
+  "createdAt": "2025-10-15T00:00:00.000Z"
+}

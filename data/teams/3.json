@@ -1,75 +1,51 @@
 {
-  "teamId": 3,
-  "fullName": "Los Angeles Dodgers",
-  "founded": 1883,
-  "colors": {
-    "primary": "#005A9C",
-    "secondary": "#FFFFFF",
-    "accent": "#EF3E42"
-  },
-  "stadium": {
-    "name": "Dodger Stadium",
-    "capacity": 56000,
-    "opened": 1962,
-    "dimensions": {
-      "leftField": 330,
-      "centerField": 395,
-      "rightField": 330
+    "teamId": 3,
+    "fullName": "Nashville Sounders",
+    "city": "Nashville",
+    "name": "Sounders",
+    "league": "American League",
+    "division": "Central",
+    "founded": 2024,
+    "colors": {
+        "primary": "#FFC107",
+        "secondary": "#212121",
+        "accent": "#FFECB3"
     },
-    "features": [
-      "Think Blue",
-      "Chavez Ravine",
-      "Stadium Way"
-    ]
-  },
-  "history": {
-    "championships": [
-      1955,
-      1959,
-      1963,
-      1965,
-      1981,
-      1988,
-      2020
-    ],
-    "retiredNumbers": [
-      1,
-      2,
-      4,
-      19,
-      20,
-      24,
-      25,
-      32,
-      34,
-      39,
-      42,
-      53
-    ],
-    "rivalries": [
-      "San Francisco Giants",
-      "San Diego Padres"
-    ]
-  },
-  "management": {
-    "generalManager": "Brandon Gomes",
-    "manager": "Dave Roberts",
-    "owner": "Guggenheim Baseball Management"
-  },
-  "facilities": {
-    "springTraining": {
-      "location": "Phoenix, AZ",
-      "facility": "Camelback Ranch"
+    "stadium": {
+        "name": "Musician's Park",
+        "capacity": 38500,
+        "opened": 2025,
+        "dimensions": {
+            "leftField": 334,
+            "centerField": 404,
+            "rightField": 326
+        },
+        "features": ["Guitar Scoreboard", "Honky Tonk Alley"]
     },
-    "academy": "Dominican Republic Complex"
-  },
-  "fanbase": {
-    "nickname": "Dodger Blue Faithful",
-    "attendance2024": 3862408,
-    "socialMedia": {
-      "twitter": "@unknown",
-      "instagram": "@unknown"
-    }
-  },
-  "createdAt": "2025-10-14T16:56:43.946Z"
+    "history": {
+        "championships": [],
+        "retiredNumbers": [],
+        "rivalries": ["Atlanta Braves"]
+    },
+    "management": {
+        "generalManager": "Avery Lang",
+        "manager": "Bo McCoy",
+        "owner": "Music City Holdings"
+    },
+    "facilities": {
+        "springTraining": {
+            "location": "Kissimmee, FL",
+            "facility": "Sunshine Fields"
+        },
+        "academy": "Southern Prospects Academy"
+    },
+    "fanbase": {
+        "nickname": "#StrikeAChord",
+        "attendance2024": 1289000,
+        "socialMedia": {
+            "twitter": "@nashsounds",
+            "instagram": "@nashsounds"
+        }
+    },
+    "createdAt": "2025-10-15T00:00:00.000Z"
 }

@@ -1,0 +1,51 @@
+{
+    "teamId": 4,
+    "fullName": "Santa Fe Suns",
+    "city": "Santa Fe",
+    "name": "Suns",
+    "league": "National League",
+    "division": "West",
+    "founded": 2025,
+    "colors": {
+        "primary": "#E65100",
+        "secondary": "#FF7043",
+        "accent": "#FFF3E0"
+    },
+    "stadium": {
+        "name": "High Desert Park",
+        "capacity": 34000,
+        "opened": 2025,
+        "dimensions": {
+            "leftField": 345,
+            "centerField": 410,
+            "rightField": 332
+        },
+        "features": ["Adobe Outfield Wall", "Taos Terrace"]
+    },
+    "history": {
+        "championships": [],
+        "retiredNumbers": [],
+        "rivalries": ["Colorado Rockies"]
+    },
+    "management": {
+        "generalManager": "Riley Cortez",
+        "manager": "Miguel Santos",
+        "owner": "Desert Sun Sports LLC"
+    },
+    "facilities": {
+        "springTraining": {
+            "location": "Mesa, AZ",
+            "facility": "Coyote Fields"
+        },
+        "academy": "New Mexico Baseball Institute"
+    },
+    "fanbase": {
+        "nickname": "#HereComesTheSun",
+        "attendance2024": 1012000,
+        "socialMedia": {
+            "twitter": "@santafesuns",
+            "instagram": "@santafesuns"
+        }
+    },
+    "createdAt": "2025-10-15T00:00:00.000Z"
+}

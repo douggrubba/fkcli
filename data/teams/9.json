@@ -1,0 +1,51 @@
+{
+    "teamId": 9,
+    "fullName": "Las Vegas High Rollers",
+    "city": "Las Vegas",
+    "name": "High Rollers",
+    "league": "National League",
+    "division": "West",
+    "founded": 2026,
+    "colors": {
+        "primary": "#000000",
+        "secondary": "#D4AF37",
+        "accent": "#C0C0C0"
+    },
+    "stadium": {
+        "name": "Stripline Park",
+        "capacity": 41000,
+        "opened": 2026,
+        "dimensions": {
+            "leftField": 335,
+            "centerField": 409,
+            "rightField": 330
+        },
+        "features": ["Neon Scoreboard", "Vegas Fountain"]
+    },
+    "history": {
+        "championships": [],
+        "retiredNumbers": [],
+        "rivalries": ["Arizona Diamondbacks", "Los Angeles Dodgers", "San Diego Padres"]
+    },
+    "management": {
+        "generalManager": "Chloe Ramirez",
+        "manager": "Danny Castillo",
+        "owner": "Silver State Sports Holdings"
+    },
+    "facilities": {
+        "springTraining": {
+            "location": "Henderson, NV",
+            "facility": "Neon Desert Complex"
+        },
+        "academy": "Nevada Prospects Academy"
+    },
+    "fanbase": {
+        "nickname": "#RollTheDice",
+        "attendance2024": 1800000,
+        "socialMedia": {
+            "twitter": "@lvrollers",
+            "instagram": "@lvrollers"
+        }
+    },
+    "createdAt": "2025-10-15T00:00:00.000Z"
+}

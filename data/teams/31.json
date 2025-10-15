@@ -1,0 +1,54 @@
+{
+  "teamId": 31,
+  "fullName": "Hartford Whalers",
+  "city": "Hartford",
+  "name": "Whalers",
+  "league": "American League",
+  "division": "East",
+  "founded": 2025,
+  "colors": {
+    "primary": "#0EA5E9",
+    "secondary": "#10B981",
+    "accent": "#86EFAC"
+  },
+  "stadium": {
+    "name": "Harbor Yard Park",
+    "capacity": 34500,
+    "opened": 2025,
+    "dimensions": {
+      "leftField": 332,
+      "centerField": 404,
+      "rightField": 330
+    },
+    "features": [
+      "Brass Bonanza Boardwalk",
+      "Whale Tail Berm"
+    ]
+  },
+  "history": {
+    "championships": [],
+    "retiredNumbers": [],
+    "rivalries": ["Boston Red Sox", "New York Yankees", "Hartford Forge"]
+  },
+  "management": {
+    "generalManager": "Theo Bradford",
+    "manager": "Diego Mazzoni",
+    "owner": "Nutmeg State Sports Club"
+  },
+  "facilities": {
+    "springTraining": {
+      "location": "Clearwater, FL",
+      "facility": "Whalers Spring Grounds"
+    },
+    "academy": "Connecticut Baseball Institute"
+  },
+  "fanbase": {
+    "nickname": "#BrassBonanza",
+    "attendance2024": 1084000,
+    "socialMedia": {
+      "twitter": "@hartfordwhale",
+      "instagram": "@hartfordwhale"
+    }
+  },
+  "createdAt": "2025-10-15T00:00:00.000Z"
+}

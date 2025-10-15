@@ -1,0 +1,51 @@
+{
+    "teamId": 12,
+    "fullName": "Memphis Blues",
+    "city": "Memphis",
+    "name": "Blues",
+    "league": "American League",
+    "division": "Central",
+    "founded": 2025,
+    "colors": {
+        "primary": "#1D4ED8",
+        "secondary": "#0EA5E9",
+        "accent": "#F5F5F5"
+    },
+    "stadium": {
+        "name": "Beale Street Ballpark",
+        "capacity": 35500,
+        "opened": 2025,
+        "dimensions": {
+            "leftField": 334,
+            "centerField": 404,
+            "rightField": 328
+        },
+        "features": ["Blues Alley", "Riverfront Porch"]
+    },
+    "history": {
+        "championships": [],
+        "retiredNumbers": [],
+        "rivalries": ["St. Louis Cardinals", "Atlanta Braves"]
+    },
+    "management": {
+        "generalManager": "Camille Porter",
+        "manager": "Jamal Rivers",
+        "owner": "Bluff City Baseball Co."
+    },
+    "facilities": {
+        "springTraining": {
+            "location": "Fort Myers, FL",
+            "facility": "River City Complex"
+        },
+        "academy": "Mid-South Prospects Academy"
+    },
+    "fanbase": {
+        "nickname": "#PlayTheBlues",
+        "attendance2024": 1103000,
+        "socialMedia": {
+            "twitter": "@memblues",
+            "instagram": "@memblues"
+        }
+    },
+    "createdAt": "2025-10-15T00:00:00.000Z"
+}

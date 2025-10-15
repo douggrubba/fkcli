@@ -1,0 +1,54 @@
+{
+  "teamId": 28,
+  "fullName": "Madison Mallards",
+  "city": "Madison",
+  "name": "Mallards",
+  "league": "National League",
+  "division": "Central",
+  "founded": 2025,
+  "colors": {
+    "primary": "#065F46",
+    "secondary": "#16A34A",
+    "accent": "#A7F3D0"
+  },
+  "stadium": {
+    "name": "Lake Mendota Park",
+    "capacity": 34000,
+    "opened": 2025,
+    "dimensions": {
+      "leftField": 332,
+      "centerField": 402,
+      "rightField": 329
+    },
+    "features": [
+      "State Street Steps",
+      "Union Terrace Deck"
+    ]
+  },
+  "history": {
+    "championships": [],
+    "retiredNumbers": [],
+    "rivalries": ["Chicago Cubs", "Milwaukee Brewers"]
+  },
+  "management": {
+    "generalManager": "Greta Jensen",
+    "manager": "Oskar Lindholm",
+    "owner": "Badger State Sports Group"
+  },
+  "facilities": {
+    "springTraining": {
+      "location": "Peoria, AZ",
+      "facility": "Mallard Spring Complex"
+    },
+    "academy": "Wisconsin Prospects Academy"
+  },
+  "fanbase": {
+    "nickname": "#QuackAttack",
+    "attendance2024": 990000,
+    "socialMedia": {
+      "twitter": "@msnmallards",
+      "instagram": "@msnmallards"
+    }
+  },
+  "createdAt": "2025-10-15T00:00:00.000Z"
+}

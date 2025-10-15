@@ -1,0 +1,54 @@
+{
+  "teamId": 19,
+  "fullName": "Buffalo Blizzard",
+  "city": "Buffalo",
+  "name": "Blizzard",
+  "league": "American League",
+  "division": "East",
+  "founded": 2026,
+  "colors": {
+    "primary": "#0EA5E9",
+    "secondary": "#60A5FA",
+    "accent": "#E0F2FE"
+  },
+  "stadium": {
+    "name": "Lake Effect Yard",
+    "capacity": 35500,
+    "opened": 2026,
+    "dimensions": {
+      "leftField": 333,
+      "centerField": 404,
+      "rightField": 329
+    },
+    "features": [
+      "Canalside Promenade",
+      "Snow Drift Berm"
+    ]
+  },
+  "history": {
+    "championships": [],
+    "retiredNumbers": [],
+    "rivalries": ["Toronto Blue Jays", "New York Yankees"]
+  },
+  "management": {
+    "generalManager": "Owen Caruso",
+    "manager": "Jace McNeil",
+    "owner": "Queen City Sports Club"
+  },
+  "facilities": {
+    "springTraining": {
+      "location": "Dunedin, FL",
+      "facility": "Snowbird Complex"
+    },
+    "academy": "Empire State Baseball Institute"
+  },
+  "fanbase": {
+    "nickname": "#BlizzardWarning",
+    "attendance2024": 1098000,
+    "socialMedia": {
+      "twitter": "@buffblizzard",
+      "instagram": "@buffblizzard"
+    }
+  },
+  "createdAt": "2025-10-15T00:00:00.000Z"
+}

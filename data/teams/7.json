@@ -1,0 +1,51 @@
+{
+    "teamId": 7,
+    "fullName": "Salt Lake Sentinels",
+    "city": "Salt Lake",
+    "name": "Sentinels",
+    "league": "National League",
+    "division": "West",
+    "founded": 2026,
+    "colors": {
+        "primary": "#0A2342",
+        "secondary": "#B87333",
+        "accent": "#E6D5B8"
+    },
+    "stadium": {
+        "name": "Wasatch Range Park",
+        "capacity": 35000,
+        "opened": 2026,
+        "dimensions": {
+            "leftField": 336,
+            "centerField": 408,
+            "rightField": 332
+        },
+        "features": ["Salt Flats Boardwalk", "Wasatch Wall"]
+    },
+    "history": {
+        "championships": [],
+        "retiredNumbers": [],
+        "rivalries": ["Colorado Rockies", "Arizona Diamondbacks"]
+    },
+    "management": {
+        "generalManager": "Talia Shepard",
+        "manager": "Marco Delgado",
+        "owner": "Great Basin Baseball LLC"
+    },
+    "facilities": {
+        "springTraining": {
+            "location": "Peoria, AZ",
+            "facility": "Desert Peak Complex"
+        },
+        "academy": "Intermountain Prospect Academy"
+    },
+    "fanbase": {
+        "nickname": "#StandGuard",
+        "attendance2024": 987000,
+        "socialMedia": {
+            "twitter": "@slcsentinels",
+            "instagram": "@slcsentinels"
+        }
+    },
+    "createdAt": "2025-10-15T00:00:00.000Z"
+}
