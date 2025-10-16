@@ -8,11 +8,14 @@ import {
     getBackKeysLabel
 } from "../util/keys.js";
 import { getGameData } from "../data/index.js";
+import InkTable from "./ui/InkTable.js";
+
+const e = React.createElement;
 
 const TeamsScreen = ({ onBack }) => {
     const [teams, setTeams] = useState([]);
     const [selectedIndex, setSelectedIndex] = useState(0);
-    const [viewMode, setViewMode] = useState("standings"); // 'standings' or 'profile'
+    const [viewMode, setViewMode] = useState("standings");
     const [selectedTeam, setSelectedTeam] = useState(null);
 
     useEffect(() => {
@@ -48,76 +51,41 @@ const TeamsScreen = ({ onBack }) => {
     });
 
     const renderStandings = () => {
-        return React.createElement(
-            Box,
-            {
-                flexDirection: "column",
-                padding: 1
-            },
-            [
-                React.createElement(
-                    Text,
-                    {
-                        key: "title",
-                        bold: true,
-                        color: "cyan"
-                    },
-                    "🏆 Team Standings"
-                ),
+        const rows = teams.map((team, index) => ({
+            id: team.id,
+            rank: index + 1,
+            team: `${team.city} ${team.name}`,
+            w: team.wins,
+            l: team.losses,
+            pct: `${((team.win_percentage || 0) * 100).toFixed(1)}%`
+        }));
 
-                React.createElement(Box, { key: "spacer1", height: 1 }),
+        const nameWidth = Math.max(20, ...rows.map((r) => r.team.length));
 
-                React.createElement(
-                    Text,
-                    {
-                        key: "header",
-                        color: "gray"
-                    },
-                    "Rank  Team                     W    L    PCT"
-                ),
-
-                React.createElement(
-                    Text,
-                    {
-                        key: "divider",
-                        color: "gray"
-                    },
-                    "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
-                ),
-
-                ...teams.map((team, index) => {
-                    const isSelected = index === selectedIndex;
-                    const winPct = ((team.win_percentage || 0) * 100).toFixed(1);
-                    const teamName = `${team.city} ${team.name}`;
-                    const paddedName = teamName.padEnd(20);
-                    const paddedWins = team.wins.toString().padStart(3);
-                    const paddedLosses = team.losses.toString().padStart(3);
-                    const paddedPct = winPct.padStart(5);
-
-                    return React.createElement(
-                        Text,
-                        {
-                            key: team.id,
-                            color: isSelected ? "black" : "white",
-                            backgroundColor: isSelected ? "cyan" : undefined,
-                            bold: isSelected
-                        },
-                        ` ${(index + 1).toString().padStart(2)}   ${paddedName} ${paddedWins}  ${paddedLosses}  ${paddedPct}%`
-                    );
-                }),
-
-                React.createElement(Box, { key: "spacer2", height: 2 }),
-
-                React.createElement(
-                    Text,
-                    {
-                        key: "instructions",
-                        color: "yellow"
-                    },
-                    `${getNavigateKeysLabel()} Navigate • ${getSelectKeysLabel()}: View Team • ${getBackKeysLabel()}: Back to Menu`
-                )
-            ]
-        );
+        return e(Box, { flexDirection: "column", padding: 1 }, [
+            e(Text, { key: "title", bold: true, color: "cyan" }, "🏆 Team Standings"),
+            e(Box, { key: "sp1", height: 1 }),
+            e(InkTable, {
+                key: "table",
+                columns: [
+                    { key: "rank", header: "Rank", width: 4, align: "right" },
+                    { key: "team", header: "Team", width: nameWidth, align: "left" },
+                    { key: "w", header: "W", width: 3, align: "right" },
+                    { key: "l", header: "L", width: 3, align: "right" },
+                    { key: "pct", header: "PCT", width: 6, align: "right" }
+                ],
+                data: rows,
+                selectedIndex,
+                pageSize: 14,
+                highlightColor: "cyan"
+            }),
+            e(Box, { key: "sp2", height: 2 }),
+            e(
+                Text,
+                { key: "footer", color: "yellow" },
+                `${getNavigateKeysLabel()} Navigate • ${getSelectKeysLabel()}: View Team • ${getBackKeysLabel()}: Back to Menu`
+            )
+        ]);
     };
 
     const renderTeamProfile = () => {
@@ -126,137 +94,85 @@ const TeamsScreen = ({ onBack }) => {
         const { record, profile } = selectedTeam;
         const winPct = ((record.win_percentage || 0) * 100).toFixed(1);
 
-        return React.createElement(
-            Box,
-            {
-                flexDirection: "column",
-                padding: 1
-            },
-            [
-                React.createElement(
+        const children = [
+            e(
+                Text,
+                { key: "hdr", bold: true, color: "cyan" },
+                `🏟️  ${profile.fullName || `${record.city} ${record.name}`}`
+            ),
+            e(Box, { key: "sp1", height: 1 }),
+            e(
+                Text,
+                { key: "rec", color: "green" },
+                `📊 Current Record: ${record.wins}-${record.losses} (${winPct}%)`
+            ),
+            e(Box, { key: "sp2", height: 1 })
+        ];
+
+        if (profile.stadium) {
+            children.push(
+                e(
                     Text,
-                    {
-                        key: "title",
-                        bold: true,
-                        color: "cyan"
-                    },
-                    `🏟️  ${profile.fullName || `${record.city} ${record.name}`}`
+                    { key: "stad", color: "white" },
+                    `🏟️  Stadium: ${profile.stadium.name} (${profile.stadium.capacity?.toLocaleString()} capacity)`
                 ),
+                e(Text, { key: "opened", color: "gray" }, `   Opened: ${profile.stadium.opened}`)
+            );
+        }
 
-                React.createElement(Box, { key: "spacer1", height: 1 }),
-
-                React.createElement(
+        if (profile.stadium?.features) {
+            children.push(
+                e(
                     Text,
-                    {
-                        key: "record",
-                        color: "green"
-                    },
-                    `📊 Current Record: ${record.wins}-${record.losses} (${winPct}%)`
-                ),
-
-                React.createElement(Box, { key: "spacer2", height: 1 }),
-
-                profile.stadium &&
-                    React.createElement(
-                        Text,
-                        {
-                            key: "stadium",
-                            color: "white"
-                        },
-                        `🏟️  Stadium: ${profile.stadium.name} (${profile.stadium.capacity?.toLocaleString()} capacity)`
-                    ),
-
-                profile.stadium &&
-                    React.createElement(
-                        Text,
-                        {
-                            key: "opened",
-                            color: "gray"
-                        },
-                        `   Opened: ${profile.stadium.opened}`
-                    ),
-
-                profile.stadium?.features &&
-                    React.createElement(
-                        Text,
-                        {
-                            key: "features",
-                            color: "gray"
-                        },
-                        `   Features: ${profile.stadium.features.join(", ")}`
-                    ),
-
-                React.createElement(Box, { key: "spacer3", height: 1 }),
-
-                profile.history &&
-                    React.createElement(
-                        Text,
-                        {
-                            key: "championships",
-                            color: "yellow"
-                        },
-                        `🏆 Championships: ${profile.history.championships?.length || 0} (Latest: ${Math.max(...(profile.history.championships || [0]))})`
-                    ),
-
-                profile.founded &&
-                    React.createElement(
-                        Text,
-                        {
-                            key: "founded",
-                            color: "gray"
-                        },
-                        `📅 Founded: ${profile.founded}`
-                    ),
-
-                profile.management &&
-                    React.createElement(
-                        Box,
-                        {
-                            key: "management",
-                            flexDirection: "column",
-                            marginTop: 1
-                        },
-                        [
-                            React.createElement(
-                                Text,
-                                {
-                                    key: "mgmt-title",
-                                    color: "cyan",
-                                    bold: true
-                                },
-                                "Management:"
-                            ),
-                            React.createElement(
-                                Text,
-                                {
-                                    key: "manager",
-                                    color: "white"
-                                },
-                                `  Manager: ${profile.management.manager}`
-                            ),
-                            React.createElement(
-                                Text,
-                                {
-                                    key: "gm",
-                                    color: "white"
-                                },
-                                `  GM: ${profile.management.generalManager}`
-                            )
-                        ]
-                    ),
-
-                React.createElement(Box, { key: "spacer4", height: 2 }),
-
-                React.createElement(
-                    Text,
-                    {
-                        key: "instructions",
-                        color: "yellow"
-                    },
-                    "B: Back to Standings • Esc: Back to Menu"
+                    { key: "feat", color: "gray" },
+                    `   Features: ${profile.stadium.features.join(", ")}`
                 )
-            ]
+            );
+        }
+
+        children.push(e(Box, { key: "sp3", height: 1 }));
+
+        if (profile.history) {
+            const latest = Math.max(...(profile.history.championships || [0]));
+            children.push(
+                e(
+                    Text,
+                    { key: "hist", color: "yellow" },
+                    `🏆 Championships: ${profile.history.championships?.length || 0} (Latest: ${latest})`
+                )
+            );
+        }
+
+        if (profile.founded) {
+            children.push(
+                e(Text, { key: "found", color: "gray" }, `📅 Founded: ${profile.founded}`)
+            );
+        }
+
+        if (profile.management) {
+            children.push(
+                e(Box, { key: "mgmt", flexDirection: "column", marginTop: 1 }, [
+                    e(Text, { key: "mgmt-h", color: "cyan", bold: true }, "Management:"),
+                    e(
+                        Text,
+                        { key: "mgr", color: "white" },
+                        `  Manager: ${profile.management.manager}`
+                    ),
+                    e(
+                        Text,
+                        { key: "gm", color: "white" },
+                        `  GM: ${profile.management.generalManager}`
+                    )
+                ])
+            );
+        }
+
+        children.push(
+            e(Box, { key: "sp4", height: 2 }),
+            e(Text, { key: "btm", color: "yellow" }, "B: Back to Standings • Esc: Back to Menu")
         );
+
+        return e(Box, { flexDirection: "column", padding: 1 }, children);
     };
 
     if (viewMode === "profile") {
