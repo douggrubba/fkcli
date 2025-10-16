@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Text, Box, useInput } from "ink";
-import { t } from "../lang/index.js";
+// import { t } from "../lang/index.js";
+import { isKey, KEYS } from "../util/keys.js";
 import { getGameData } from "../data/index.js";
 
 const TeamsScreen = ({ onBack }) => {
@@ -12,25 +13,29 @@ const TeamsScreen = ({ onBack }) => {
     useEffect(() => {
         const db = getGameData();
         const standings = db.getStandings();
-        setTeams(standings);
+        const id = setTimeout(() => setTeams(standings), 0);
+        return () => clearTimeout(id);
     }, []);
 
     useInput((input, key) => {
-        if (key.escape || (input === "q" && viewMode === "standings")) {
+        if (isKey(key, KEYS.BACK) && viewMode === "standings") {
             onBack();
         } else if (viewMode === "standings") {
-            if (key.upArrow && selectedIndex > 0) {
+            if (isKey(key, KEYS.UP) && selectedIndex > 0) {
                 setSelectedIndex(selectedIndex - 1);
-            } else if (key.downArrow && selectedIndex < teams.length - 1) {
+            } else if (isKey(key, KEYS.DOWN) && selectedIndex < teams.length - 1) {
                 setSelectedIndex(selectedIndex + 1);
-            } else if (key.return && teams[selectedIndex]) {
+            } else if (isKey(key, KEYS.SELECT) && teams[selectedIndex]) {
                 const db = getGameData();
                 const teamData = db.getCompleteTeamData(teams[selectedIndex].id);
                 setSelectedTeam(teamData);
                 setViewMode("profile");
             }
         } else if (viewMode === "profile") {
-            if (key.escape || input === "b") {
+            if (
+                isKey(key, KEYS.BACK) ||
+                (typeof input === "string" && input.toLowerCase() === "b")
+            ) {
                 setViewMode("standings");
                 setSelectedTeam(null);
             }

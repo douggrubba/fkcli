@@ -26,12 +26,24 @@ export const en = {
         option1: "Change Language",
         option2: "Game Difficulty",
         option3: "Audio Settings",
+        option4: "Controls",
         exit: "Press ESC or Q to go back to menu",
         language: {
             title: "Select Language",
             current: "Current language",
             select: "Select a language:",
             changed: "Language changed to"
+        },
+        controls: {
+            title: "Controls",
+            current: "Current",
+            select: "Select a control scheme:",
+            changed: "Controls changed to",
+            modes: {
+                arrows: "Arrows",
+                vim: "Vim (HJKL)",
+                wasd: "WASD"
+            }
         }
     },
 

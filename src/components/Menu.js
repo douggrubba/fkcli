@@ -1,16 +1,12 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { Text, Box, useInput } from "ink";
 import { t } from "../lang/index.js";
+import { isKey, KEYS } from "../util/keys.js";
 import { getGameState } from "../data/gameState.js";
 
 const Menu = ({ onSelect }) => {
     const [selectedIndex, setSelectedIndex] = useState(0);
-    const [hasSavedGame, setHasSavedGame] = useState(false);
-
-    useEffect(() => {
-        const gameState = getGameState();
-        setHasSavedGame(gameState.hasActiveGame());
-    }, []);
+    const [hasSavedGame] = useState(() => getGameState().hasActiveGame());
 
     const menuItems = [
         { key: "newGame", label: t("game.newGame") },
@@ -21,11 +17,11 @@ const Menu = ({ onSelect }) => {
     ];
 
     useInput((input, key) => {
-        if (key.upArrow) {
+        if (isKey(key, KEYS.UP_ARROW)) {
             setSelectedIndex((prev) => (prev > 0 ? prev - 1 : menuItems.length - 1));
-        } else if (key.downArrow) {
+        } else if (isKey(key, KEYS.DOWN_ARROW)) {
             setSelectedIndex((prev) => (prev < menuItems.length - 1 ? prev + 1 : 0));
-        } else if (key.return) {
+        } else if (isKey(key, KEYS.SELECT)) {
             if (onSelect) {
                 onSelect(menuItems[selectedIndex].key);
             }

@@ -1,8 +1,8 @@
-import fs from 'fs';
-import path from 'path';
+import fs from "fs";
+import path from "path";
 
 // Configuration file path
-const CONFIG_FILE = path.join(process.cwd(), 'config.json');
+const CONFIG_FILE = path.join(process.cwd(), "config.json");
 
 // Default configuration
 const DEFAULT_CONFIG = {
@@ -12,7 +12,9 @@ const DEFAULT_CONFIG = {
     // UI settings
     ui: {
         fullscreen: true,
-        exitOnCtrlC: true
+        exitOnCtrlC: true,
+        // Input mode: 'arrows' | 'vim' | 'wasd'
+        inputMode: "arrows"
     },
 
     // Game settings
@@ -28,12 +30,12 @@ let CONFIG = { ...DEFAULT_CONFIG };
 // Load config from file if it exists
 try {
     if (fs.existsSync(CONFIG_FILE)) {
-        const configData = fs.readFileSync(CONFIG_FILE, 'utf8');
+        const configData = fs.readFileSync(CONFIG_FILE, "utf8");
         const savedConfig = JSON.parse(configData);
         CONFIG = { ...DEFAULT_CONFIG, ...savedConfig };
     }
 } catch (error) {
-    console.warn('Failed to load config file, using defaults:', error.message);
+    console.warn("Failed to load config file, using defaults:", error.message);
 }
 
 // Function to get config value with dot notation
@@ -66,7 +68,7 @@ export const setConfig = (keyPath, newValue) => {
     }
 
     current[keys[keys.length - 1]] = newValue;
-    
+
     // Save config to file
     saveConfig();
 };
@@ -74,8 +76,8 @@ export const setConfig = (keyPath, newValue) => {
 // Save configuration to file
 const saveConfig = () => {
     try {
-        fs.writeFileSync(CONFIG_FILE, JSON.stringify(CONFIG, null, 2), 'utf8');
+        fs.writeFileSync(CONFIG_FILE, JSON.stringify(CONFIG, null, 2), "utf8");
     } catch (error) {
-        console.error('Failed to save config file:', error.message);
+        console.error("Failed to save config file:", error.message);
     }
 };

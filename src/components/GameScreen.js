@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Text, Box, useInput } from "ink";
-import { t } from "../lang/index.js";
+// import { t } from "../lang/index.js";
+import { isKey, KEYS } from "../util/keys.js";
 import { getGameState } from "../data/gameState.js";
 
 const GameScreen = ({ onBack }) => {
@@ -12,12 +13,15 @@ const GameScreen = ({ onBack }) => {
         const teamData = gameState.getPlayerTeamData();
         const currentGameData = gameState.getGameData();
 
-        setPlayerTeam(teamData);
-        setGameData(currentGameData);
+        const id = setTimeout(() => {
+            setPlayerTeam(teamData);
+            setGameData(currentGameData);
+        }, 0);
+        return () => clearTimeout(id);
     }, []);
 
     useInput((input, key) => {
-        if (key.escape || input === "q") {
+        if (isKey(key, KEYS.BACK)) {
             // Update game state before going back to menu
             const gameState = getGameState();
             gameState.setCurrentScreen("menu");

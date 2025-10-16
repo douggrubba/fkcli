@@ -2,7 +2,8 @@
   "language": "en",
   "ui": {
     "fullscreen": true,
-    "exitOnCtrlC": true
+    "exitOnCtrlC": true,
+    "inputMode": "vim"
   },
   "game": {
     "difficulty": "normal",

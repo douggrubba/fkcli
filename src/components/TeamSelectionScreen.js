@@ -1,6 +1,7 @@
 import React, { useState, useMemo } from "react";
 import { Text, Box, useInput } from "ink";
 import { getGameData } from "../data/index.js";
+import { isKey, KEYS } from "../util/keys.js";
 
 const TeamSelectionScreen = ({ onTeamSelect, onBack }) => {
     const [selectedIndex, setSelectedIndex] = useState(0);
@@ -32,21 +33,21 @@ const TeamSelectionScreen = ({ onTeamSelect, onBack }) => {
     }, [selectedIndex, teams]);
 
     useInput((input, key) => {
-        if (key.escape || input === "q") {
+        if (isKey(input, key, KEYS.BACK)) {
             onBack();
-        } else if (key.upArrow) {
+        } else if (isKey(input, key, KEYS.UP)) {
             if (selectedIndex === 0) {
                 setSelectedIndex(teams.length - 1);
             } else {
                 setSelectedIndex(selectedIndex - 1);
             }
-        } else if (key.downArrow) {
+        } else if (isKey(input, key, KEYS.DOWN)) {
             if (selectedIndex === teams.length - 1) {
                 setSelectedIndex(0);
             } else {
                 setSelectedIndex(selectedIndex + 1);
             }
-        } else if (key.return && teams[selectedIndex]) {
+        } else if (isKey(input, key, KEYS.SELECT) && teams[selectedIndex]) {
             onTeamSelect(teams[selectedIndex]);
         }
     });

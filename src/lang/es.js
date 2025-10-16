@@ -26,12 +26,24 @@ export const es = {
         option1: "Cambiar Idioma",
         option2: "Dificultad del Juego",
         option3: "Configuración de Audio",
+        option4: "Controles",
         exit: "Presiona ESC o Q para volver al menú",
         language: {
             title: "Seleccionar Idioma",
             current: "Idioma actual",
             select: "Selecciona un idioma:",
             changed: "Idioma cambiado a"
+        },
+        controls: {
+            title: "Controles",
+            current: "Actual",
+            select: "Selecciona un esquema de control:",
+            changed: "Controles cambiados a",
+            modes: {
+                arrows: "Flechas",
+                vim: "Vim (HJKL)",
+                wasd: "WASD"
+            }
         }
     },
 
