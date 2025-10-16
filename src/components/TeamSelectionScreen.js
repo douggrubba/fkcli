@@ -3,6 +3,8 @@ import { Text, Box, useInput } from "ink";
 import { getGameData } from "../data/index.js";
 
 const TeamSelectionScreen = ({ onTeamSelect, onBack }) => {
+    const [selectedIndex, setSelectedIndex] = useState(0);
+
     const teams = useMemo(() => {
         const db = getGameData();
         const standings = db.getStandings();
@@ -11,9 +13,6 @@ const TeamSelectionScreen = ({ onTeamSelect, onBack }) => {
             `${a.city} ${a.name}`.localeCompare(`${b.city} ${b.name}`)
         );
     }, []);
-
-    const [selectedIndex, setSelectedIndex] = useState(0);
-    const MAX_LIST_ROWS = 16;
 
     // Load detailed data for the currently selected team (derived)
     const selectedTeamData = useMemo(() => {
@@ -35,14 +34,26 @@ const TeamSelectionScreen = ({ onTeamSelect, onBack }) => {
     useInput((input, key) => {
         if (key.escape || input === "q") {
             onBack();
-        } else if (key.upArrow && selectedIndex > 0) {
-            setSelectedIndex(selectedIndex - 1);
-        } else if (key.downArrow && selectedIndex < teams.length - 1) {
-            setSelectedIndex(selectedIndex + 1);
+        } else if (key.upArrow) {
+            if (selectedIndex === 0) {
+                setSelectedIndex(teams.length - 1);
+            } else {
+                setSelectedIndex(selectedIndex - 1);
+            }
+        } else if (key.downArrow) {
+            if (selectedIndex === teams.length - 1) {
+                setSelectedIndex(0);
+            } else {
+                setSelectedIndex(selectedIndex + 1);
+            }
         } else if (key.return && teams[selectedIndex]) {
             onTeamSelect(teams[selectedIndex]);
         }
     });
+
+    const getTeamName = (team) => {
+        return team ? `${team.city} ${team?.name}` : "Unknown Team";
+    };
 
     const renderTeamDetails = () => {
         if (!selectedTeamData) {
@@ -198,12 +209,6 @@ const TeamSelectionScreen = ({ onTeamSelect, onBack }) => {
 
     // Compute scroll window for the team list
     const total = teams.length;
-    const visible = Math.min(total, MAX_LIST_ROWS);
-    const half = Math.floor(visible / 2);
-    const start = Math.max(0, Math.min(selectedIndex - half, total - visible));
-    const end = Math.min(start + visible, total);
-    const hasAbove = start > 0;
-    const hasBelow = end < total;
 
     return React.createElement(
         Box,
@@ -246,29 +251,22 @@ const TeamSelectionScreen = ({ onTeamSelect, onBack }) => {
 
                     React.createElement(Box, { key: "spacer2", height: 1 }),
 
-                    // isSelected - for the team that is currently highlighted
-                    // teams
-                    // team.city team.name team.emoji
-
-                    // might not be needed but hasBelow && hasAbove
-
                     React.createElement(
                         Text,
                         { key: "prevTeam", color: "gray" },
-                        teams[selectedIndex - 1 > -1 ? selectedIndex - 1 : selectedIndex.length - 1]
-                            ?.name
+                        getTeamName(teams[selectedIndex - 1 > -1 ? selectedIndex - 1 : total - 1])
                     ),
 
                     React.createElement(
                         Text,
                         { key: "selectedTeam", color: "cyan" },
-                        teams[selectedIndex]?.name
+                        getTeamName(teams[selectedIndex])
                     ),
 
                     React.createElement(
                         Text,
                         { key: "nextTeam", color: "gray" },
-                        teams[selectedIndex + 1 < teams.length - 1 ? selectedIndex + 1 : 0]?.name
+                        getTeamName(teams[selectedIndex + 1 < total - 1 ? selectedIndex + 1 : 0])
                     ),
 
                     React.createElement(Box, { key: "spacer3", height: 2 }),
