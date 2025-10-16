@@ -73,3 +73,28 @@ export const isKey = (...args) => {
     const fn = active[action];
     return typeof fn === "function" ? !!fn() : false;
 };
+
+// UI helpers for dynamic instruction labels
+export const getNavigateKeysLabel = () => {
+    const mode = (getConfig("ui.inputMode", "arrows") || "arrows").toLowerCase();
+    if (mode === "vim") return "J/K";
+    if (mode === "wasd") return "W/S";
+    return "↑/↓";
+};
+
+export const getLeftRightKeysLabel = () => {
+    const mode = (getConfig("ui.inputMode", "arrows") || "arrows").toLowerCase();
+    if (mode === "vim") return "H/L";
+    if (mode === "wasd") return "A/D";
+    return "←/→";
+};
+
+export const getSelectKeysLabel = () => {
+    // We accept Enter or Space, but show Enter for brevity
+    return "Enter";
+};
+
+export const getBackKeysLabel = () => {
+    // We accept Esc or Q universally
+    return "Q/Esc";
+};

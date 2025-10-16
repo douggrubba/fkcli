@@ -1,7 +1,12 @@
 import React, { useState, useEffect } from "react";
 import { Text, Box, useInput } from "ink";
-// import { t } from "../lang/index.js";
-import { isKey, KEYS } from "../util/keys.js";
+import {
+    isKey,
+    KEYS,
+    getNavigateKeysLabel,
+    getSelectKeysLabel,
+    getBackKeysLabel
+} from "../util/keys.js";
 import { getGameData } from "../data/index.js";
 
 const TeamsScreen = ({ onBack }) => {
@@ -18,14 +23,14 @@ const TeamsScreen = ({ onBack }) => {
     }, []);
 
     useInput((input, key) => {
-        if (isKey(key, KEYS.BACK) && viewMode === "standings") {
+        if (isKey(input, key, KEYS.BACK) && viewMode === "standings") {
             onBack();
         } else if (viewMode === "standings") {
-            if (isKey(key, KEYS.UP) && selectedIndex > 0) {
+            if (isKey(input, key, KEYS.UP) && selectedIndex > 0) {
                 setSelectedIndex(selectedIndex - 1);
-            } else if (isKey(key, KEYS.DOWN) && selectedIndex < teams.length - 1) {
+            } else if (isKey(input, key, KEYS.DOWN) && selectedIndex < teams.length - 1) {
                 setSelectedIndex(selectedIndex + 1);
-            } else if (isKey(key, KEYS.SELECT) && teams[selectedIndex]) {
+            } else if (isKey(input, key, KEYS.SELECT) && teams[selectedIndex]) {
                 const db = getGameData();
                 const teamData = db.getCompleteTeamData(teams[selectedIndex].id);
                 setSelectedTeam(teamData);
@@ -33,7 +38,7 @@ const TeamsScreen = ({ onBack }) => {
             }
         } else if (viewMode === "profile") {
             if (
-                isKey(key, KEYS.BACK) ||
+                isKey(input, key, KEYS.BACK) ||
                 (typeof input === "string" && input.toLowerCase() === "b")
             ) {
                 setViewMode("standings");
@@ -109,7 +114,7 @@ const TeamsScreen = ({ onBack }) => {
                         key: "instructions",
                         color: "yellow"
                     },
-                    "↑↓ Navigate • Enter: View Team • Q: Back to Menu"
+                    `${getNavigateKeysLabel()} Navigate • ${getSelectKeysLabel()}: View Team • ${getBackKeysLabel()}: Back to Menu`
                 )
             ]
         );

@@ -1,7 +1,13 @@
 import React, { useState, useMemo } from "react";
 import { Text, Box, useInput } from "ink";
 import { getGameData } from "../data/index.js";
-import { isKey, KEYS } from "../util/keys.js";
+import {
+    isKey,
+    KEYS,
+    getNavigateKeysLabel,
+    getSelectKeysLabel,
+    getBackKeysLabel
+} from "../util/keys.js";
 
 const TeamSelectionScreen = ({ onTeamSelect, onBack }) => {
     const [selectedIndex, setSelectedIndex] = useState(0);
@@ -278,7 +284,7 @@ const TeamSelectionScreen = ({ onTeamSelect, onBack }) => {
                             key: "instructions",
                             color: "gray"
                         },
-                        "↑↓ Navigate • Enter: Select • Q/Esc: Back"
+                        `${getNavigateKeysLabel()} Navigate • ${getSelectKeysLabel()}: Select • ${getBackKeysLabel()}: Back`
                     )
                 ]
             ),

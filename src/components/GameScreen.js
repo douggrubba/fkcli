@@ -21,7 +21,7 @@ const GameScreen = ({ onBack }) => {
     }, []);
 
     useInput((input, key) => {
-        if (isKey(key, KEYS.BACK)) {
+        if (isKey(input, key, KEYS.BACK)) {
             // Update game state before going back to menu
             const gameState = getGameState();
             gameState.setCurrentScreen("menu");

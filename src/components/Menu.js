@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Text, Box, useInput } from "ink";
 import { t } from "../lang/index.js";
-import { isKey, KEYS } from "../util/keys.js";
+import { isKey, KEYS, getNavigateKeysLabel, getSelectKeysLabel } from "../util/keys.js";
 import { getGameState } from "../data/gameState.js";
 
 const Menu = ({ onSelect }) => {
@@ -17,11 +17,11 @@ const Menu = ({ onSelect }) => {
     ];
 
     useInput((input, key) => {
-        if (isKey(key, KEYS.UP_ARROW)) {
+        if (isKey(input, key, KEYS.UP_ARROW)) {
             setSelectedIndex((prev) => (prev > 0 ? prev - 1 : menuItems.length - 1));
-        } else if (isKey(key, KEYS.DOWN_ARROW)) {
+        } else if (isKey(input, key, KEYS.DOWN_ARROW)) {
             setSelectedIndex((prev) => (prev < menuItems.length - 1 ? prev + 1 : 0));
-        } else if (isKey(key, KEYS.SELECT)) {
+        } else if (isKey(input, key, KEYS.SELECT)) {
             if (onSelect) {
                 onSelect(menuItems[selectedIndex].key);
             }
@@ -55,7 +55,7 @@ const Menu = ({ onSelect }) => {
                     key: "instructions",
                     color: "gray"
                 },
-                t("ui.menuInstructions")
+                `Use ${getNavigateKeysLabel()} to navigate, ${getSelectKeysLabel()} to select`
             )
         ]
     );

@@ -3,7 +3,13 @@ import { Text, Box, useInput } from "ink";
 import { t, setLanguage, getCurrentLanguage, LANGUAGES, getLanguageName } from "../lang/index.js";
 import { getGameState } from "../data/gameState.js";
 import { getConfig, setConfig } from "../config.js";
-import { isKey, KEYS } from "../util/keys.js";
+import {
+    isKey,
+    KEYS,
+    getNavigateKeysLabel,
+    getSelectKeysLabel,
+    getBackKeysLabel
+} from "../util/keys.js";
 
 const SettingsScreen = ({ onBack }) => {
     const [currentView, setCurrentView] = useState("main");
@@ -123,7 +129,11 @@ const SettingsScreen = ({ onBack }) => {
                 `🎮 ${t("settings.title")}`
             ),
             React.createElement(Box, { key: "spacer1", height: 1 }),
-            React.createElement(Text, { key: "instruction" }, t("settings.instruction")),
+            React.createElement(
+                Text,
+                { key: "instruction" },
+                `Use ${getNavigateKeysLabel()} to navigate, ${getSelectKeysLabel()} to select`
+            ),
             React.createElement(Box, { key: "spacer2", height: 1 }),
             React.createElement(
                 Text,
@@ -165,7 +175,7 @@ const SettingsScreen = ({ onBack }) => {
             React.createElement(
                 Text,
                 { key: "exit", color: "gray", dimColor: true },
-                t("settings.exit")
+                `Press ${getBackKeysLabel()} to go back to menu`
             ),
             showMessage &&
                 React.createElement(Text, { key: "message", color: "green" }, showMessage)
@@ -190,7 +200,11 @@ const SettingsScreen = ({ onBack }) => {
                 `${t("settings.language.current")}: ${getLanguageName(getCurrentLanguage())}`
             ),
             React.createElement(Box, { key: "spacer2", height: 1 }),
-            React.createElement(Text, { key: "instruction" }, t("settings.language.select")),
+            React.createElement(
+                Text,
+                { key: "instruction" },
+                `Select a language: (${getSelectKeysLabel()} to apply)`
+            ),
             React.createElement(Box, { key: "spacer3", height: 1 }),
             ...availableLanguages.map((lang, index) => {
                 const isSelected = selectedLanguage === index;
@@ -212,7 +226,7 @@ const SettingsScreen = ({ onBack }) => {
             React.createElement(
                 Text,
                 { key: "exit", color: "gray", dimColor: true },
-                t("settings.exit")
+                `Press ${getBackKeysLabel()} to go back to menu`
             ),
             showMessage &&
                 React.createElement(Text, { key: "message", color: "green" }, showMessage)
