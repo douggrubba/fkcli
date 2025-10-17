@@ -12,6 +12,7 @@ const Menu = ({ onSelect }) => {
         { key: "newGame", label: t("game.newGame") },
         ...(hasSavedGame ? [{ key: "continue", label: t("game.continue") }] : []),
         { key: "teams", label: "Teams" },
+        { key: "playerPool", label: "Player Pool" },
         { key: "settings", label: t("game.settings") },
         { key: "quit", label: t("game.quit") }
     ];

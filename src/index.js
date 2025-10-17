@@ -9,6 +9,7 @@ import TeamsScreen from "./components/TeamsScreen.js";
 import TeamSelectionScreen from "./components/TeamSelectionScreen.js";
 import GameScreen from "./components/GameScreen.js";
 import SettingsScreen from "./components/SettingsScreen.js";
+import PlayerPoolScreen from "./components/PlayerPoolScreen.js";
 import { initializeGameData, closeGameData } from "./data/index.js";
 import { getGameState, initializeGameState } from "./data/gameState.js";
 
@@ -83,6 +84,9 @@ const App = () => {
                 break;
             case "teams":
                 setCurrentScreen("teams");
+                break;
+            case "playerPool":
+                setCurrentScreen("playerPool");
                 break;
             case "quit":
                 exit();
@@ -218,6 +222,10 @@ const App = () => {
             });
         case "settings":
             return React.createElement(SettingsScreen, {
+                onBack: () => setCurrentScreen("menu")
+            });
+        case "playerPool":
+            return React.createElement(PlayerPoolScreen, {
                 onBack: () => setCurrentScreen("menu")
             });
         case "noSavedGame":
